@@ -1,0 +1,97 @@
+/*********************
+HEADER
+*********************/
+.site-header{
+  background: $white;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 10px;
+  @include transition($transition);
+  @include breakpoint(medium){
+    padding: 20px;
+  }
+}
+
+.nav-up {
+  top: -90px;
+}
+
+.top-bar{
+  background: $white;
+  padding: 0;
+  .top-bar-left{
+    -ms-flex: 0 0 auto;
+      flex: 0 0 auto; 
+  }
+  .top-bar-right{
+    -ms-flex: 0 1 auto;
+      flex: 0 1 auto;    
+    @include breakpoint(large){
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-left: 0;
+    }
+  }
+  .logo{
+    margin-left: 10px;
+    display: flex;    
+    @include breakpoint(large){
+      width: 175px;
+    }
+  }
+  ul{
+    background: $white;
+  }
+}
+
+.logo{
+  img{
+    width: auto;
+    height: 50px;
+    @include breakpoint(small){
+      
+    }
+    @include breakpoint(medium){
+      
+    }
+  }
+}
+
+/*********************
+NEWS TICKER
+*********************/
+.news-ticker{
+  display: flex;
+  align-items: center;
+  border: 1px solid $light-grey;
+  padding: 4px;
+  border-radius: 1em;
+  h2{
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: $red;
+    color: $white;
+    font-family: $primary_regular;
+    display: flex;
+    font-size: .75em;
+    margin:0;
+  }
+  &-item{
+    display: flex;
+    font-size: .75em;
+    color: $shield-grey;
+    padding: 0 0 0 1em;
+    span{
+
+    }
+    .news-next{
+      padding: 0 1em;
+    }
+
+  }
+
+}

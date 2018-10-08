@@ -1,0 +1,231 @@
+/*********************
+SLIDER
+*********************/ 
+
+.slide{
+  .grid-x{
+    min-height: calc(100vh - 210px);
+    height: 100%;
+  }
+}
+
+.slide-content{
+  padding: 10px;
+  @include breakpoint(medium){
+    padding: 0;
+  }
+}
+
+
+/*********************
+SLIDER PROGRESS
+*********************/ 
+
+.slider-progress-container{
+  display: none;
+  @include breakpoint(medium){
+    @include transform-origin(0 50%);
+    @include transform( rotate(-90deg) translate(-50%, 50%));
+    left: -40px;
+    top: 50%;
+    margin-top: -60px;
+    position: absolute;
+    display: block;
+  }
+
+  @include breakpoint(large){
+    left: -50px;
+  }
+
+  @include breakpoint(1580px){
+    left: -100px;
+  }
+
+  > div{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .slider-progress{
+    width: 180px;
+    height: 1px;
+    background: $light-grey;    
+    .progress{
+      width: 0%;
+      height: 1px;
+      background: $black;
+    }
+  }
+  .paging-info{
+    font-size: .875em;
+    padding: 0 0 0 30px;
+  }
+}
+
+#section-intro{
+  //background: $light-grey;
+}
+
+.slick-list, .slick-slide {
+  outline: none !important;
+  cursor: pointer;
+}
+
+.slick-slider{
+  .slick-track,
+  .slick-list{
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+.slick-current.slick-active{
+  //display: none;
+}
+
+/*********************
+SLIDER ARROWS
+*********************/ 
+.slick-prev,
+.slick-next{
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $black;
+  padding: 0;
+  left: initial;
+  right: -40px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  outline: none;
+  background-color: $white;
+  display: none!important;
+
+  @include breakpoint(medium){
+    display: block!important;
+  }
+  @include breakpoint(large){
+    width: 40px;
+    height: 40px;
+    display: block;
+    right: -50px;
+  }
+  @include breakpoint(xlarge){
+    display: block;
+    right: -55px;
+  }
+  @include transition($transition);
+
+  &:hover{
+    background: $light-grey;
+  }
+}
+
+.slick-prev{
+  margin-top: 20px;
+  @include breakpoint(large){
+    margin-top: 25px;
+  }
+}
+
+.slick-next{
+  margin-top: -20px;
+  @include breakpoint(large){
+    margin-top: -25px;
+  }
+}
+
+
+.news-slider{
+  .slick-prev,
+  .slick-next{
+    right: initial;
+    left: -50px;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before{
+  content: '';
+  background-image: url('../img/graphics/arrow.svg');
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  font-size: 0;
+  display: block;
+}
+
+@include breakpoint(large){
+  .slick-prev:before,
+  .slick-next:before{
+    width: 40px;
+    height: 40px;
+    background-size: 10px 10px;
+  }
+}
+
+.slick-prev:before{
+  @include transform(rotate(90deg));
+}
+
+.slick-next:before{
+  @include transform(rotate(-90deg)); 
+}
+
+
+/*********************
+SLIDER DOTS
+*********************/ 
+.slick-dots {
+  bottom: 0;
+  @include breakpoint(medium){
+    @include transform-origin(0 50%);
+    @include transform( rotate(-90deg) translate(-50%, 50%));
+    width: auto;
+    left: -44px;
+    top: 50%;
+    margin-top: 120px;
+    bottom: initial;
+  }
+  @include breakpoint(large){
+    left: -54px;
+  }
+  @include breakpoint(1580px){
+    left: -104px;
+  }
+
+  li{
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    padding: 0;
+    button{
+      height: 12px;
+      width: 12px;
+      padding: 0;
+      &:before{
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        margin: 2px;
+        border: 1px solid $black;
+        content: '';
+        font-size: 0;
+        background: $white;
+        opacity: 1;
+      }
+    }
+    &.slick-active button::before{
+      background: $black;
+      opacity: 1;
+    }
+  }
+}

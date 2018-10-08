@@ -1,0 +1,175 @@
+/*********************
+TYPOGRAPHY
+*********************/ 
+body {
+    font-family: $primary_regular;
+}
+
+ 
+h1,h2,
+.h1, .h2, {
+    font-family: $secondary_bold;
+    line-height: .86;
+}
+  
+h3, h4, h5, h6, b, strong,
+.h3, .h4, .h5, .h6{
+    font-family: $secondary_regular;
+}
+  
+h1, .h1 {
+  font-size: 2.75em;
+}
+
+h2 {
+    font-size: 2.75em;
+}
+
+h3 {
+    font-size: 1.65em;
+}
+
+h4 {
+    font-size: 1.45em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.15em;
+}
+
+.section-title{
+  font-size: 1.375em;
+  color: $red;
+  text-transform: uppercase;
+  font-family: $secondary_bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:before,
+  &:after{
+    content: '';
+    display: flex;
+    width: 12px;
+    height: 20px;
+    background: $red;
+  }
+  &:before{
+    margin-right: 10px;
+  }
+  &:after{
+    margin-left: 10px;
+  }
+}
+
+p{
+  &.intro{
+    font-family: $primary_bold;
+    font-size: 1.125em;
+    line-height: 1.4;
+  }
+}
+
+
+@include breakpoint(medium){
+  h1,h2,h3,
+  .h1, .h2, .h3{
+    line-height: .86;
+  } 
+
+  h1, .h1 {
+    font-size: 5em;
+  }
+
+  h2, .h2 {
+    font-size: 4.25em;
+  }
+
+  h3, .h3 {
+    font-size: 1.85em;
+  }
+
+  h4, .h4{
+    font-size: 1.65em;
+  }
+
+  h5, .h5 {
+    font-size: 1.45em;
+  }
+
+  h6, .h6 {
+    font-size: 1.25em;
+  }
+
+  p{
+    &.intro{
+      font-size: 1.375em;
+    }
+  }
+
+  .section-title{
+    font-size: 1.625em;
+  }
+}
+
+
+@include breakpoint(large){
+  h1, .h1 {
+    font-size: 6.75em;
+  }
+
+  h2, .h2 {
+    font-size: 6.25em;
+  }
+
+  h3, .h3 {
+    font-size: 1.85em;
+  }
+
+  h4, .h4{
+    font-size: 1.65em;
+  }
+
+  h5, .h5 {
+    font-size: 1.45em;
+  }
+
+  h6, .h6 {
+    font-size: 1.25em;
+  }
+
+  p{
+    &.intro{
+      font-size: 1.625em;
+    }
+  }
+}
+
+@include breakpoint(xlarge){
+  h1, .h1 {
+    font-size: 8.75em;
+  }
+
+  h2, .h2 {
+    font-size: 6.25em;
+  }
+
+  h3, .h3 {
+    font-size: 1.85em;
+  }
+
+  h4, .h4{
+    font-size: 1.65em;
+  }
+
+  h5, .h5 {
+    font-size: 1.45em;
+  }
+
+  h6, .h6 {
+    font-size: 1.25em;
+  }
+}

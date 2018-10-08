@@ -1,0 +1,228 @@
+/*********************
+NEWS GRID
+*********************/
+.news-grid{
+    @include breakpoint(medium){
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }    
+    &-item{
+        background: $white;
+        position: relative;
+        
+        .img{
+            display: block;
+            height: 100px;
+            position: relative;
+            -webkit-background-size: cover;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: $light-grey;
+            @include transition(.2s ease all);
+            @include breakpoint(medium){
+                height: 220px;
+            }
+        }
+        &:hover{
+            .img{
+                background-size: 105%;
+            }
+        }
+    }
+    .news-content{
+        padding: 10px 0 20px; 
+        @include breakpoint(medium){
+            padding: 30px 0 40px;
+        }
+        h3{
+            @include breakpoint(large){
+                width: 75%;
+            }
+        }
+    }
+}
+
+/*********************
+NEWS CONTENT: META, TITLE, EXCERPT
+*********************/
+
+.news-content{
+    .news-meta{
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        font-size: .875em;
+        @include breakpoint(medium){
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        span{
+            display: flex;
+        }
+        .category{
+            align-items: center;
+            &:after{
+                content: '';
+                display: flex;
+                width: 64px;
+                height: 1px;
+                background: $black;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+    h3{
+        font-size: 1.5em;
+        line-height: 1.1;
+        @include breakpoint(medium){
+            font-size: 1.875em;
+        }
+    }
+}
+
+
+/*********************
+NEWS SLIDER: NAV ITEM
+*********************/
+.news-slider-nav{
+    display: none;
+    @include breakpoint(medium){
+        display: block;
+    }
+}
+
+.news-slider-nav-item{
+    &-inner{
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        .img{
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+            background-size: cover;
+            background-color: $light-grey;
+            display: block;
+            flex: 0 0 120px;
+            @include breakpoint(medium){
+
+            }
+            @include breakpoint(large){
+                width: 100px;
+                height: 100px;
+                flex: 0 0 100px;
+            }
+            @include breakpoint(xlarge){
+                width: 120px;
+                height: 120px;
+                flex: 0 0 120px;
+            }
+        }
+        .news-content{
+            padding: 0;
+            flex: 1;
+        }
+    }
+}
+
+/*********************
+NEWS SLIDER: MAIN
+*********************/
+.news-slider-container{
+    width: 100%;
+    @include breakpoint(xlarge){
+        width: 80%;
+    }
+    .news-slider{
+        .news-slider-item{
+            position: relative;
+            .img{
+                width: 100%;
+                height: 150px;
+                display: flex;
+                background-size: cover;
+                background-color: $light-grey;
+                @include breakpoint(medium){
+                    height: 400px;
+                }
+                @include breakpoint(large){
+                    height: 500px;
+                }
+            }
+            .news-content{
+                background: $white;
+                padding: 10px 0;
+                @include breakpoint(medium){
+                    position: absolute;
+                    padding: 40px 40px 0;
+                    bottom: 0;
+                    left: 100px;
+                }
+                h3{
+                    font-size: 2em;
+                    @include breakpoint(medium){
+                        font-size: 2.5em;
+                    }
+                }
+                p{
+                    position: relative;
+                    @include breakpoint(medium){
+                        &:before{
+                            content: '';
+                            background: $red;
+                            height: 1px;
+                            width: 50px;
+                            position: absolute;
+                            left: -65px;
+                            top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*********************
+NEWS CATEGORY MENU
+*********************/
+nav{
+    &.news-category-menu{
+      ul{
+        &.menu{
+          li{
+            margin-right: 10px;
+            a{
+              border-radius: 50px;
+              text-transform: uppercase;
+              border: 1px solid $stone-grey;
+              color: $stone-grey;
+              font-size: .75em;
+              padding-left: 3em;
+              padding-right: 3em;
+              font-family: $primary_bold;           
+            }
+            &:hover{
+              a{
+                background: $stone-grey;
+                color: $white;
+              }
+            }
+            &:focus,
+            &:active,
+            &.active{
+              a{
+                background: $white;
+                color: $red;
+                border-color: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

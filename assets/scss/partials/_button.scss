@@ -1,0 +1,94 @@
+/*********************
+BUTTONS
+*********************/ 
+.button{
+    text-transform: uppercase;
+    font-family: $secondary_bold;
+    background: $red;
+    color: $white;
+    border: none;
+    letter-spacing: .05em;
+    &:focus,
+    &:hover,
+    &:active{
+        background: darken($red, 10%);
+        color: $white;
+    }
+    &.large{
+        font-size: 1.275em;
+        padding: .5em 1em;
+        @include breakpoint(medium){
+            font-size: 1.3125em;
+            padding: 1em;
+        }
+    }
+    &.xlarge{
+        font-size: 1.25em;
+        padding: 1.5em;
+    }
+    &.full-width{
+        width: 100%;
+        padding: 1em;
+    }
+    &.with-arrow{
+        &:after{
+            content: url('../img/graphics/arrow-white.svg');
+            display: inline-block;
+            padding-left: 30px;
+        }
+    }
+    &.with-arrow-down{
+        &:after{
+            content: url('../img/graphics/arrow-white.svg');
+            display: inline-block;
+            @include transform(rotate(90deg));
+        }
+    }
+
+    &.bg-black{
+        background: $black;
+        color: $white;
+        &:focus{
+            background: lighten($black, 10%);
+            color: $white;
+        }
+        &:hover,
+        &:active{
+            background: lighten($black, 10%);
+            color: $white;
+        }
+    }
+    
+    &.outline{
+        background: $white;
+        border: 1px solid $red;
+        color: $red;
+        @include transition($transition);
+        &:hover,
+        &:active{
+            background: $red;
+            color: $white;
+        }       
+    }
+    &.outline-black{
+        background: $white;
+        border: 1px solid $black;
+        color: $black;
+        @include transition($transition);
+        &:hover,
+        &:active{
+            background: $black;
+            color: $white;
+        }       
+    }
+    .line{
+        width: 100px;
+        height: 1px;
+        background: $white;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+}

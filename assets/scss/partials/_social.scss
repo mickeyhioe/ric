@@ -1,0 +1,170 @@
+/*********************
+SOCIAL FOLLOW
+*********************/
+.social-follow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  flex-wrap: wrap;
+  .section-bottom &{
+    margin-bottom: 20px;
+    @include breakpoint(medium){
+      margin-bottom: 0;
+    }
+  }
+  h3{
+    font-family: $primary-medium;
+    font-size: 1em;
+    flex-grow: 1;
+    min-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    .bg-red &{
+      color: $white;
+    }
+    @include breakpoint(large){
+      min-width: auto;
+      flex-grow: auto;
+      margin-bottom: 0;
+    }
+  }
+  .line{
+    flex: auto;
+    height: 2px;
+    background-color: $black;
+    margin-left: 20px;   
+    display: none;
+    .bg-red &{
+      background-color: $white;
+    }
+    @include breakpoint(large){
+      width: 80px;
+      display: block;
+    }    
+    @include breakpoint(xlarge){
+      width: 100px;
+    }
+  }
+  a{
+    flex: auto;
+    padding: 5px;
+    width: 40px;  
+    text-align: center;
+    .bg-red &{
+      color: $white;
+    }
+    &:hover{
+      color: $stone-grey;
+      .bg-red &{
+        color: darken($white, 20%);
+      }
+    }
+    i{
+      font-size: 1.2em;
+    }
+  }
+}
+
+/*********************
+SOCIAL SHARE
+*********************/
+.social-share-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  @include breakpoint(medium){
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: auto;
+  }
+  .social-share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    width: 100%;
+    padding-top: 3px;
+    border-top: 1px solid $light-grey;
+    @include breakpoint(medium){
+      background: transparent;
+      display: block;
+      padding-top:0;
+      border: none;
+    }
+    h3{
+      font-family: $primary_bold;
+      font-size: 1em;
+      padding: 0 0 0 10px;
+      &:after{
+        content:'';
+        display: inline-block;
+        background: $black;
+        height: 2px;
+        width: 100px;
+        margin: 10px;
+        vertical-align: middle;
+      }
+      @include breakpoint(medium){
+        @include transform( rotate(-90deg));
+        width: 40px;
+        &:after{
+          display: none;
+        }
+      }     
+    }
+    .line{
+      width: 0;
+      @include breakpoint(medium){
+        width: 40px;
+        &:before{
+          content:'';
+          display: inline-block;
+          background: $black;
+          height: 100px;
+          width: 2px;
+          margin: 10px 18px;
+        }
+      }
+    }
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      @include breakpoint(medium){
+        flex-direction: column;
+      }
+      li{
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        a{
+
+          &:hover{
+            color: $red;
+          }
+
+        }
+      }
+    }
+    &.dark-bg{
+      h3{
+        color: $white;
+      }
+      .line:before{
+        background: $white;
+      }
+      ul li a{
+        color: $white;
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+    
+  }
+}

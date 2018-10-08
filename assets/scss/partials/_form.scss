@@ -1,0 +1,62 @@
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea{
+    border: 1px solid $black;
+    background: transparent;    
+    color: $black;
+    box-shadow: none; 
+    &.rounded{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    &.large{
+        height: 52px;
+        width: 100%;       
+        @include breakpoint(medium) {
+            width: calc(100% - 10px);
+        }
+    }
+}
+
+.icon-inside{
+    position: relative;
+    [type=email],
+    [type=text]{
+        margin-bottom: 0;
+        padding-left: 50px;        
+        height: 42px;
+        @include placeholder{
+            color: $black;
+            font-size: .8em;
+        }
+    }
+    &.icon-email::before{
+        background-image: url(../img/graphics/mail.svg);
+    }
+    &.icon-search::before{
+        background-image: url(../img/graphics/search.svg);
+        width: 20px;
+        left: 20px;
+    }
+    &:before{
+        content: '';        
+        background-repeat: no-repeat;
+        display: block;
+        width: 40px;
+        height: 20px;
+        top: 12px;
+        left: 5px;
+        position: absolute;
+    }
+    
+    button.arrow{
+        position: absolute;
+        cursor: pointer;
+        top: 12px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/graphics/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center center;
+    }
+}

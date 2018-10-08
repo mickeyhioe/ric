@@ -1,0 +1,244 @@
+/*********************
+GENERAL STYLES
+*********************/
+a{
+  color: $black;
+  &:hover{
+    color: $shield-grey;
+    transition: .3s linear all;
+  }
+  &:focus,
+  &:active{
+    color: $black;
+  }
+}
+
+ul.list{
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+.grid-container{
+  max-width: 93.75em; //1500px;
+}
+
+.all-caps{
+  text-transform: uppercase;
+}
+
+/*********************
+SECTION PADDING
+*********************/
+
+.padding-for-fix-header{
+  padding-top: 100px;
+}
+.section-padding{
+  padding-top: 3em;
+  padding-bottom: 3em;
+  @include breakpoint(large){
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+  &-small{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    @include breakpoint(medium){
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+    @include breakpoint(large){
+      padding-top: 6em;
+      padding-bottom: 6em;
+    }
+  }
+  &-top{
+    padding-top: 3em;
+    padding-bottom: 0;
+    @include breakpoint(large){
+      padding-top: 6em;
+    }
+    &-large{
+      padding-top: 6em;
+      @include breakpoint(large){
+        padding-top: 10em;
+      }
+    }
+  }
+}
+.section-padding-main{
+  padding-top: 4em;
+  padding-bottom: 3em;
+  @include breakpoint(medium){
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+}
+
+/*********************
+SECTION MARGIN
+*********************/
+.section-margin{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include breakpoint(medium){
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  @include breakpoint(large){
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &-top{
+    margin-top: 20px;
+    margin-bottom: 0;
+    @include breakpoint(medium){
+      margin-top: 40px;
+    }
+    @include breakpoint(large){
+      margin-top: 60px;
+    }
+  }
+  &-bottom{
+    margin-bottom: 20px;
+    margin-top: 0;
+    @include breakpoint(medium){
+      margin-bottom: 40px;
+    }
+    @include breakpoint(large){
+      margin-bottom: 60px;
+    }
+  }
+}
+
+/*********************
+UTILITY
+*********************/ 
+.full-height{
+  height: 100%;
+  min-height: 100vh;
+}
+
+.align-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.padding-0{
+  padding: 0;
+}
+.margin-0{
+  margin:0;
+}
+
+.padding-1{
+  padding: 1em;
+}
+
+.padding-2{
+  padding: 2em;
+}
+
+.margin-top-1{
+  margin-top: 1em;
+}
+.margin-top-2{
+  margin-top: 2em;
+}
+
+.padding-3{
+  padding: 2em;
+}
+.margin-3{
+  margin: 2em;
+}
+
+.box-shadow{
+  box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+}
+
+.box-shadow-hover{
+  transition: all 0.3s ease;
+  @extend .box-shadow;
+  text-decoration: none;
+  transform: scale(1.01);
+}
+
+.rounded{
+  border-radius: 50px;
+}
+
+.no-wrap{
+  white-space: nowrap!important;
+}
+
+.bg-white-transparent{
+  background: rgba(255,255,255,.75);
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:0;
+  @include breakpoint(large){
+    background: transparent;
+  }
+}
+
+
+/*********************
+VIDEO & IMAGE CONTAINER
+*********************/ 
+.video-container-wave,
+.image-container-wave{  
+  margin-top: 20px;
+  @include breakpoint(medium){
+    position: relative;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 60px;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: -40px;
+      bottom: -40px;
+      z-index: -1;
+      @include bg-wave();      
+    }
+  }
+  @include breakpoint(large){
+    margin-bottom: 0;
+  }
+  @include breakpoint(xlarge){
+    margin-left: -40px;
+  }
+}
+
+#section-intro{
+  position: relative; 
+}
+
+.section-bottom{
+  align-self: flex-end;
+  @include breakpoint(medium){
+    @include bg-split-vertical($black, $white);
+    /*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0;
+    */
+  }
+  .grid-x{
+    background: $white;
+  }
+  .social-share{
+    min-height: 80px;
+  }
+}

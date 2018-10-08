@@ -1,0 +1,83 @@
+/*********************
+FOOTER
+*********************/
+
+.footer-bg{
+  > .grid-container{
+    padding: 0;
+  }
+  @include breakpoint(large){
+    @include bg-split-vertical($light-grey, $red);
+    .grind-container{
+      
+    }
+  }
+}
+
+footer{
+  &.footer{
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .logo{
+    text-align: center;
+    margin-bottom: 10px;
+    @include breakpoint(medium){
+      text-align: left;
+      margin-bottom: 0;
+    }
+    img{
+      height: 80px;
+    }
+    
+  }
+  .menu{
+    a{
+      font-size: .8em;
+      @include breakpoint(medium){
+        font-size: 1em;
+      }
+    }
+  }
+  p{
+    font-size: .8em;
+    @include breakpoint(medium){
+      font-size: 1em;
+    }
+  }
+}
+
+.f-padding{
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.pixel-dreams{
+  text-align: center;
+  font-weight: bold;
+  color: $medium-gray;
+  vertical-align: middle;
+  line-height: 32px;
+  font-size: .8em;
+  @include breakpoint(medium){
+    text-align: right;
+  }
+  img{
+    width: 20px;
+    height: auto;
+    margin-left: 5px;
+  }
+}
+
+.scroll-top {
+  display: none;
+  @include breakpoint(medium){
+    float: right;
+    display: block;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    @include transform(rotate(-90deg));
+  }
+}

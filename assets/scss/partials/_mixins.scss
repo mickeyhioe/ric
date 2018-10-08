@@ -1,0 +1,430 @@
+/* ----------------------------------------------------------------------------
+ * Mixins
+ * ------------------------------------------------------------------------- */
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//Flex
+@mixin flex($value){
+  flex: $value;
+  webkit-box-flex: $value;
+  box-flex: $value;
+  -webkit-flex: $value;
+  -moz-flex: $value;
+  -ms-flex: $value;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+/*
+ * Mixin for clearfix
+ * @include clearfix;
+*/
+@mixin clearfix {
+	&:before,
+	&:after {
+        content: " ";
+        display: table;
+    }
+
+	&:after {
+        clear: both;
+    }
+}
+
+
+/*
+ * @font-face mixin
+ * Bulletproof font-face via Font Squirrel
+ * @include fontface('family', 'assets/fonts/', 'myfontname');
+ */
+@mixin fontface($font-family, $font-url, $font-name, $weight) {
+	@font-face {
+        font: {
+			  family: $font-family;
+        style: normal;
+        weight: $weight;
+    }
+
+    src: url($font-url + '/' + $font-name + '.eot');
+		src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+			 url($font-url + '/' + $font-name + '.woff') format('woff'),
+			 url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
+			 url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+  }
+}
+
+
+/**
+ * IMAGE RETINA
+ * @include image-2x(/img/image.png, 100%, auto);
+ */
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Responsive
+ * Usage
+
+    @include r(240)  { }
+    @include r(320)  { }
+    @include r(480)  { }
+    @include r(768)  { }
+    @include r(1024) { }
+    @include r(1280) { }
+
+ * ------------------------------------------------------------------------- */
+
+@mixin r($point) {
+    @if $point == 240 {
+     @media only screen and (min-width: 240px) { @content; }
+    }
+   @if $point == 320 {
+    @media only screen and (min-width: 320px) { @content; }
+   }
+   @if $point == 480 {
+    @media only screen and (min-width: 480px) { @content; }
+   }
+   @if $point == 600 {
+    @media only screen and (min-width: 600px) { @content; }
+   }
+   @if $point == 768 {
+    @media only screen and (min-width: 768px) { @content; }
+   }
+   @if $point == 1024 {
+    @media only screen and (min-width: 1024px) { @content; }
+   }
+   @if $point == 1140 {
+    @media only screen and (min-width: 1140px) { @content; }
+   }
+   @if $point == 1280 {
+    @media only screen and (min-width: 1280px) { @content; }
+   }
+   @if $point == 1500 {
+    @media only screen and (min-width: 1500px) { @content; }
+   }
+}
+
+@mixin breakpoint($resolution) {
+	@media only screen and (min-width: $resolution) { @content; }
+}
+
+
+
+ /*********************
+CSS3 GRADIENTS.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+/*********************
+BOX SHADOW
+*********************/
+
+$transition: all 0.3s ease-in-out;
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur 0 $color;
+	 -moz-box-shadow: $x $y $blur 0 $color;
+	      box-shadow: $x $y $blur 0 $color;
+}
+
+@mixin text-shadow($y, $blur, $color) {
+	     text-shadow: 0 $y $blur $color;
+}
+
+@mixin color($class, $color) {
+	.#{$class} {
+		color: $color;
+	}
+}
+
+@mixin bg-color($class, $color) {
+    .bg-#{$class} { 
+    	background-color: $color;
+	}
+}
+
+@mixin bg-gfx-color($class) {
+  .bg-gfx.bg-#{$class} { 
+    background: transparent url('../img/bg-#{$class}.png') no-repeat;
+	}
+}
+
+@mixin bg-opacity($class, $color) {
+  .rise .block[class*=" bg-gfx"].bg-#{$class} { 
+  	background-color: $color !important;
+    background-color: rgba($color, 0.8) !important;
+	}
+
+  .rise:hover .block[class*=" bg-gfx"].bg-#{$class} { 
+    background-color: rgba($color, 0.5) !important;
+  }
+}
+
+@mixin button-color($class, $color) {
+  button.#{$class}, .button.#{$class} { 
+  	background-color: $color;
+	}
+}
+
+@mixin button-outline($class, $color) {
+    button.outline.#{$class}, .button.outline.#{$class} { 
+    	color: $color;
+		  border-color: $color;
+	}
+}
+
+@mixin icon-color($class, $color) {
+  .icons.#{$class} { 
+  	background-color: $color;
+	}
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+         -o-transition: $transition;
+    -kthtml-transition: $transition;
+            transition: $transition;
+}
+
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+		 -moz-transform: rotate(#{$degrees}deg);
+		  -ms-transform: rotate(#{$degrees}deg);
+			 -o-transform: rotate(#{$degrees}deg);
+					transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+}
+
+@mixin transform-origin( $position ) {
+	-webkit-transform-origin: $position;
+		 -moz-transform-origin: $position;
+			 -o-transform-origin: $position;
+				  transform-origin: $position;
+}
+
+@mixin drop-shadow( $option){
+	-webkit-filter: drop-shadow( $option);
+				 filter: drop-shadow( $option);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin grayscale($value) {
+	-webkit-filter: #{"grayscale(#{$value})"};
+	-moz-filter: #{"grayscale(#{$value})"};
+	filter:#{"grayscale(#{$value})"};
+}
+
+
+@mixin list-columns($col-amount, $col-margin: 15px) {
+	float: left;	
+	width: 100 / $col-amount  + '%'; /* Fallback */
+	width: -o-calc((100% - (#{$col-margin} * (#{$col-amount} - 1))) / #{$col-amount});
+	width: calc((100% - (#{$col-margin} * (#{$col-amount} - 1))) / #{$col-amount});
+
+	&:not(:nth-of-type(#{$col-amount}n)) {
+		margin-right: $col-margin;
+	}
+}
+
+@mixin column-count($col-count){
+  -webkit-column-count: $col-count;
+  -moz-column-count: $col-count;
+    column-count: $col-count;
+}
+
+@mixin transform($parameter){
+  -webkit-transform: $parameter;
+  -ms-transform: $parameter;
+  transform: $parameter;
+}
+
+@mixin saw-tooth-vertical($width: 18px, $bg: #fff) {
+  background-image:
+    /* Top jagged */
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(225deg, $bg 50%, transparent 50%),
+    /* Bottom jagged */
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%);
+  background-position:
+    /* Top jagged */
+    top left, top left,
+    /* Bottom jagged */
+    bottom left, bottom left;
+  background-size: $width $width;
+  background-repeat: repeat-x;
+}
+
+
+@mixin saw-tooth-horizontal($width: 12px, $bg: #fff) {
+  background-image:
+    /* Left jagged */
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    /* Right jagged */
+    linear-gradient(-135deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%);
+  background-position:
+    /* Left jagged */
+    top left, top left,
+    /* Right jagged */
+    top right, top right;
+  background-size: $width $width;
+  background-repeat: repeat-y;
+}
+
+
+@mixin saw-tooth($width: 12px, $bg: #fff) {
+  background-image:
+    /* Top jagged */
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(225deg, $bg 50%, transparent 50%),
+    /* Bottom jagged */
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%),
+    /* Left jagged */
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    /* Right jagged */
+    linear-gradient(-135deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%);
+  background-position:
+    /* Top jagged */
+    top left, top left,
+    /* Bottom jagged */
+    bottom left, bottom left,
+    /* Left jagged */
+    top left, top left,
+    /* Right jagged */
+    top right, top right;
+  background-size: $width $width;
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat-y, repeat-y, repeat-y, repeat-y;
+}
+
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+		 -moz-transform: rotate(#{$degrees}deg);
+		  -ms-transform: rotate(#{$degrees}deg);
+			 -o-transform: rotate(#{$degrees}deg);
+					transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+}
+
+@mixin transform-origin( $position ) {
+	-webkit-transform-origin: $position;
+		 -moz-transform-origin: $position;
+			 -o-transform-origin: $position;
+				  transform-origin: $position;
+}
+
+@mixin bg-wave(){
+  background-image: url(../img/wave-pattern.svg);
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+@mixin title-icon($icon){
+  background: url($icon);
+  content:'';
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 120px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+@mixin linear-gradient($from, $to) {
+  background: $to;
+	background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	background: -o-linear-gradient(top, $from 0%,$to 100%);
+	background: linear-gradient(to bottom, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})
+}
+
+
+@mixin bg-split-vertical($from, $to) {
+  background: $to;
+	background: -moz-linear-gradient(left, $from 50%, $to 50%);
+	background: -webkit-gradient(left, color-stop(50%,$from), color-stop(50%,$to));
+	background: -webkit-linear-gradient(left, $from 50%,$to 50%);
+	background: -o-linear-gradient(left, $from 50%,$to 50%);
+	background: linear-gradient(to right, $from 50%,$to 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#{$from}, endColorstr=#{$to})
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

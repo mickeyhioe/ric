@@ -1,0 +1,62 @@
+/* ----------------------------------------------------------------------------
+ * Variables
+ * ------------------------------------------------------------------------- */
+$white		  : rgba(255, 255, 255, 1);
+$black		  : rgba(0, 0, 0, 1);
+$light-grey	: rgba(234, 234, 234, 1);
+$stone-grey : rgba(145, 155, 165, 1);
+$shield-grey: rgba(89, 105, 120, 1);
+$rocky-grey : rgba(55, 65, 75, 1);
+$red        : rgba(204, 13, 31, 1);
+
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$xsmall: 320px;
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1400px;
+
+$width: 96%;
+$gutter: 4%;
+
+// Fonts
+@include fontface('NeueHaasGroteskText Pro', '../fonts/grotesk', 'NHaasGroteskTXPro-55Rg','normal');
+@include fontface('NeueHaasGroteskText Bold', '../fonts/grotesk', 'NHaasGroteskTXPro-75Bd','bold');
+@include fontface('NeueHaasGroteskText Medium', '../fonts/grotesk', 'NHaasGroteskTXPro-65Md', '500');
+@include fontface('Druk Text', '../fonts/druktext', 'DrukText-Medium', '500');
+@include fontface('Druk Text', '../fonts/druktext', 'DrukText-Bold', 'bold');
+@include fontface('Druk Text Heavy', '../fonts/druktext', 'Druk-Heavy', '900');
+
+$primary_regular : "NeueHaasGroteskText Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$primary_medium  : "NeueHaasGroteskText Medium", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+$primary_bold    : "NeueHaasGroteskText Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$secondary_regular  : "Druk Text", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$secondary_bold     : "Druk Text Heavy", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$transition: all 0.3s ease-in-out;
+
+
+// Color
+$colors: (
+  black: $black,
+  white: $white,
+  light-grey: $light-grey,
+  stone-grey: $stone-grey,
+  shield-grey: $shield-grey,
+  rocky-grey: $rocky-grey,
+  red: $red 
+
+);
+
+@mixin gen-props($prefix, $property) {
+    @each $color-name, $color in $colors {
+      .#{$prefix}-#{$color-name} {
+        #{$property}: $color
+      }
+    }
+  }
+
+  @include gen-props('text', 'color');
+  @include gen-props('bg', 'background');
