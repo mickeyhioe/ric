@@ -1,6 +1,6 @@
     <?php
-      if (!isset($page)){
-        $page ="Welcome";
+      if (!isset($page_title)){
+        $page_title ="Welcome";
       }
     ?>
     <!-- Section Intro -->
@@ -39,7 +39,7 @@
                 <div class="grid-x align-middle align-center">
                   <div class="xlarge-6 medium-5 medium-order-1 small-order-2 cell">
                     <div class="slide-content">
-                      <span class="section-title"><?php echo $page; ?></span>
+                      <span class="section-title"><?php echo $page_title; ?></span>
                       <h2 class="h1"><?php echo $title; ?></h2>
                       <p class="intro"><?php echo $content; ?></p>
                       <a href="#" class="button large with-arrow"><span><?php echo $cta; ?></span></a>

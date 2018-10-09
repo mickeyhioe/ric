@@ -1,7 +1,7 @@
 <!-- Main Menu -->
 <nav class="main-menu">
     <ul class="menu">
-        <li <?php if($page == 'Welcome'){ echo 'class="active"'; }?>><a href="index.php">Home</a></li>
+        <li <?php if($page == 'Home'){ echo 'class="active"'; }?>><a href="index.php">Home</a></li>
         <li class="has-sub-menu <?php if($page == 'About'){ echo 'active'; }?>"><a href="about.php">About</a>
         <ul class="sub-menu">
             <li><a href="our-story.php">Our Story</a></li>
