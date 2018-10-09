@@ -1,4 +1,6 @@
-<?php include('includes/social-share.php'); ?>
+      <div id="social-share">
+        <?php include('includes/social-share.php'); ?>
+      </div>
     
     </div>
 
