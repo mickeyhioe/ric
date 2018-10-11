@@ -91,7 +91,7 @@
 
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/slick/slick.min.js"></script>
-    <script src="assets/js/vendor/parallax/parallax.min.js"></script>
+    <script src="assets/js/vendor/paroller/jquery.paroller.min.js"></script>
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.min.js"></script>
     <script src="assets/js/vendor/ResizeSensor.js"></script>

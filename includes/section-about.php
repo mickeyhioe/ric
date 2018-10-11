@@ -4,7 +4,7 @@
       }
     ?>
     <!-- Section About -->
-    <section id="section-about" class="full-height" data-parallax="scroll" data-image-src="assets/img/people-mountain.jpg">
+    <section id="section-about" class="full-height parallax" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" data-paroller-direction="vertical" style="background-image: url('assets/img/people-mountain.jpg')">
       <div class="grid-container">
         <div class="grid-x align-center">
           <div class="large-11 cell">

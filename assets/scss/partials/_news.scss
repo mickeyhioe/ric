@@ -14,7 +14,6 @@ NEWS GRID
             display: block;
             height: 100px;
             position: relative;
-            -webkit-background-size: cover;
             background-size: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -47,37 +46,38 @@ NEWS GRID
 NEWS CONTENT: META, TITLE, EXCERPT
 *********************/
 
-.news-content{
-    .news-meta{
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
-        font-size: .875em;
-        @include breakpoint(medium){
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-        span{
-            display: flex;
-        }
-        .category{
-            align-items: center;
-            &:after{
-                content: '';
-                display: flex;
-                width: 64px;
-                height: 1px;
-                background: $black;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-        }
-    }
+.news-content{    
     h3{
         font-size: 1.5em;
         line-height: 1.1;
         @include breakpoint(medium){
             font-size: 1.875em;
+        }
+    }
+}
+
+.news-meta{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-size: .875em;
+    @include breakpoint(medium){
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    span{
+        display: flex;
+    }
+    .category{
+        align-items: center;
+        &:after{
+            content: '';
+            display: flex;
+            width: 64px;
+            height: 1px;
+            background: $black;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
 }

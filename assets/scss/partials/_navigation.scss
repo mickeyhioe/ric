@@ -172,7 +172,7 @@ MOBILE MENU
       display: flex;
       align-items: center;
       &.active{
-        a{
+        > a{
           color: $black;
         }
       }      
@@ -263,3 +263,38 @@ MOBILE MENU
 /*********************
 STICKY NAVIGATION
 *********************/
+nav.sticky-nav{
+  ul{
+    list-style-type: none;
+    margin: 0;
+    width: 275px;
+    background: $white;
+    li{
+
+      a{
+        font-family: $secondary_bold;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+       
+        &:hover{
+          color: $grey;
+          .section-line{
+            border-color: $grey;
+          }
+        }
+        &.is-active{ 
+          color: $grey;
+          .section-line{
+            border-color: $grey;
+          }
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ h1,h2,
     line-height: .86;
 }
   
-h3, h4, h5, h6, b, strong,
+h3, h4, h5, h6,
 .h3, .h4, .h5, .h6{
     font-family: $secondary_regular;
 }
@@ -21,7 +21,7 @@ h1, .h1 {
   font-size: 2.75em;
 }
 
-h2 {
+h2,.h2 {
     font-size: 2.75em;
 }
 
@@ -70,6 +70,46 @@ p{
     font-family: $primary_bold;
     font-size: 1.125em;
     line-height: 1.4;
+  }
+}
+
+b, strong{
+  font-family: $primary_bold;
+}
+
+ol{
+  &.leading-zero{
+    margin-left:0;
+    list-style-type: none;
+	  counter-reset: li;
+    li{
+      &:before{
+        counter-increment: li;
+        content: counter(li, decimal-leading-zero) ". ";
+        margin-right: 0.25em;
+      }
+    }
+  }
+}
+
+.primary-bold{
+  font-family: $primary_bold;
+}
+
+.secondary-bold{
+  font-family: $secondary_bold;
+  letter-spacing: .02em;
+}
+
+.font-size{
+  &-1{
+    font-size: 1em;
+  }
+  &-2{
+    font-size: 1.375em;
+  }
+  &-3{
+    font-size: 1.5em;
   }
 }
 

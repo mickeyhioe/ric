@@ -1,5 +1,6 @@
 <?php 
   $page = "Home";
+  $sub_page = "";
   include('includes/header.php');
 ?>
 

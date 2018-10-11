@@ -4,8 +4,8 @@
         <li <?php if($page == 'Home'){ echo 'class="active"'; }?>><a href="index.php">Home</a></li>
         <li class="has-sub-menu <?php if($page == 'About'){ echo 'active'; }?>"><a href="about.php">About</a>
         <ul class="sub-menu">
-            <li><a href="our-story.php">Our Story</a></li>
-            <li><a href="leadership.php">Leadership</a></li>
+            <li <?php if($sub_page == 'Our Story'){ echo 'class="active"'; }?>><a href="our-story.php">Our Story</a></li>
+            <li <?php if($sub_page == 'Leadership'){ echo 'class="active"'; }?>><a href="leadership.php">Leadership</a></li>
         </ul>
         </li>
         <li class="has-sub-menu <?php if($page == 'Industries'){ echo 'active'; }?>"><a href="induestries.php">Industries</a>

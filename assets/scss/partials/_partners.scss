@@ -1,0 +1,221 @@
+/*********************
+PARTNERS GRID
+*********************/
+.partner-grid{
+    @include breakpoint(medium){
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }    
+    &-item{
+        background: $white;
+        position: relative;
+        
+        .img{ 
+            display: block;
+            height: 150px;
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid $light-grey;
+            @include transition(.2s ease all);
+            @include breakpoint(medium){
+                height: 190px;
+            }
+        }
+        &:hover{
+            .img{
+                //background-size: 105%;
+            }
+        }
+    }
+    .partner-content{
+        padding: 20px 0 30px;
+        font-size: .875em;
+        @include breakpoint(medium){
+            padding: 30px 0 40px;
+        }
+    }
+}
+
+.partner-meta{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: .875em;
+    span{
+        display: flex;
+    }
+    .category{
+        align-items: center;
+        &:after{
+            content: '';
+            display: flex;
+            width: 64px;
+            height: 1px;
+            background: $black;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+/*********************
+BOARD OF DIRCTORS
+*********************/
+
+
+.board-grid,
+.board-bio{
+    &-item{
+        position: relative;
+        .board-img{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            background-color: $light-grey;
+            @include breakpoint(medium){
+                height: 250px;
+            }
+            @include breakpoint(large){
+                height: 400px;
+            }
+        }
+        .board-content{
+            background: $white;
+            padding: 10px 0;
+            @include breakpoint(medium){
+                padding: 20px 0;
+            }
+            @include breakpoint(large){
+                position: absolute;
+                padding: 30px 0 20px 20px;
+                bottom: 0;
+                left: 50px;
+                right: 0;
+            }
+            @include breakpoint(xlarge){
+                left: 120px;
+            }
+            h3{
+                font-size: 1.5em;
+                @include breakpoint(medium){
+                    font-size: 1.875em;
+                }
+            }
+            .board-info{
+                font-size: .875em;
+                line-height: 1.3;
+                a{
+                    margin-top: 5px;
+                    display: block;
+                    position: relative;
+                    color: $red;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include breakpoint(medium){
+                        &:before{
+                            content: '';
+                            background: $red;
+                            height: 1px;
+                            width: 30px;
+                            position: absolute;
+                            left: -35px;
+                            top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .board-bio-content{
+            
+        }
+    }
+}
+
+.board-bio{
+    &-item{
+
+        .board-bio-img-container{
+            position: relative;
+        }
+        
+        .board-img{
+            height: 300px;
+            @include breakpoint(medium){
+                position: relative;                
+                max-width: 400px;
+            }
+            @include breakpoint(large){
+                width: 90%;
+                max-width: 500px;
+                height: 500px;
+            }
+        }
+        
+        .board-content{
+            padding: 20px 0;
+            @include breakpoint(large){
+                padding: 40px 30px;
+            }
+            h3{
+                font-size: 1.5em;
+                @include breakpoint(medium){
+                    font-size: 2em;
+                }
+                @include breakpoint(large){
+                    font-size: 2.5em; 
+                }
+            }
+            .board-info{
+                a{
+                    @include breakpoint(medium){
+                        &:before{
+                            left: -45px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.board-bio-content{
+    @include breakpoint(medium){
+        border-top: 1px solid $black;
+        padding-top: 1em;
+    }
+}
+
+.board-meta{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    @include breakpoint(medium){
+        margin-bottom: 15px;
+    }
+    span{
+        display: flex;
+    }
+    .category{
+        align-items: center;
+        &:after{
+            content: '';
+            display: flex;
+            width: 64px;
+            height: 1px;
+            background: $black;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.board-bio-copy{
+    margin-right: 30px;
+}

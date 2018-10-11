@@ -11,6 +11,22 @@ a{
   &:active{
     color: $black;
   }
+  &.with-line{
+      color: $red;
+      position: relative;
+      &:before{
+          content: '';
+          background: $red;
+          height: 1px;
+          width: 20px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+      }
+      &:hover{
+        text-decoration: underline;
+      }
+  }
 }
 
 ul.list{
@@ -118,6 +134,15 @@ UTILITY
 .full-height{
   height: 100%;
   min-height: 100vh;
+  &.with-top-bar{
+    min-height: calc(100vh - 90px);
+  }
+  &.with-section-bottom{
+    min-height: calc(100vh - 80px);
+  }
+  &.with-top-bar.with-section-bottom{
+    min-height: calc(100vh - 170px);
+  }
 }
 
 .align-center {
@@ -186,6 +211,36 @@ UTILITY
   @include breakpoint(large){
     background: transparent;
   }
+}
+
+/*********************
+PARALLAX & IMAGE
+*********************/ 
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.parallax{
+  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $black;
+}
+
+.blur{
+  @include filter(blur, 5px);
+}
+.maple-leaf-bg{
+  @include filter(blur, 5px);
+  @include transform(rotate(135deg));
+  width: 250px;
+  height: auto;
+}
+
+.maple-leaf-fg{
+  width: 500px;
+  height: auto;
+  @include transform (translateX(150px));
 }
 
 
