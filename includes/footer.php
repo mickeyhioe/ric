@@ -64,7 +64,7 @@
           <div class="cell medium-8">
             <nav class="nav-menu">
               <ul class="menu align-center">
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Legal Statement</a></li>
                 <li><a href="#">Sitemap</a></li>

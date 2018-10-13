@@ -3,9 +3,17 @@ INDUSTRY
 *********************/
 
 .map-container{
-    height: 500px;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $light-grey;
+    height: 400px;
     @include breakpoint(large){
-        height: 600px;
+        height: 500px;
     }
+}
+
+.icon{
+    width: 30px;
+    height: auto;
 }

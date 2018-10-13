@@ -148,6 +148,8 @@ MOBILE MENU
       }
     }
   }
+
+  // Navigation
   nav {
     position: relative;
     height: 80%;
@@ -171,6 +173,7 @@ MOBILE MENU
       justify-content: center;
       display: flex;
       align-items: center;
+      padding: 10px;
       &.active{
         > a{
           color: $black;
@@ -181,12 +184,13 @@ MOBILE MENU
         position: relative;
         font-family: $secondary_regular;
         font-weight: bold;
-        font-size: 2em;
+        font-size: 2.75em;
         color: $light-grey;
         text-transform: uppercase;
         text-decoration: none;
         background: none!important;
         overflow: hidden;
+        padding:0;
         @include breakpoint(medium){
           font-size: 3.75em;
         }
@@ -198,39 +202,46 @@ MOBILE MENU
       }
       &.has-sub-menu{
         display: block;
-        a{
+        > a{
           padding-bottom: 0;
+          @include breakpoint(large){
+            display: none;
+          }
         }
       }
     }
     &.sub-menu{
       display: flex;
       flex-direction: row;
-      padding-bottom: 1em;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       li{
-        align-self: flex-start;
         a{
-          font-size: 1.5em;
-          &:focus,
-          &:active{
-            background: none!important;
-          }
+          font-size: 1.5em;          
           @include breakpoint(medium){
             font-size: 1.875em;
-            &:after,
-            &:before{
-              content: '';
-              height: 2px;
-              width: 20px;
-              margin: 0 5px;
-              background: $light-gray;
-              display: inline-flex;
-              vertical-align: middle;
+          }
+        }
+        &.parent{
+          display: none;
+          @include breakpoint(large){
+            display: block;
+          }
+          a{
+            @include breakpoint(large){
+              font-size: 3.75em;
+              &:after,
+              &:before{
+                content: '';
+                height: 1px;
+                width: 50px;
+                margin: 0 10px;
+                background: $light-gray;
+                display: inline-flex;
+                vertical-align: middle;
+              }
             }
-          }       
-         
+          }
         }
         &.active{
           a{

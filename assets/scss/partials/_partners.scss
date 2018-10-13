@@ -65,11 +65,15 @@ PARTNERS GRID
 BOARD OF DIRCTORS
 *********************/
 
+.board-bio-item{
+    display: none;
+}
 
 .board-grid,
 .board-bio{
     &-item{
         position: relative;
+        
         .board-img{
             width: 100%;
             height: 200px;

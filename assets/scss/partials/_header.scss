@@ -82,11 +82,14 @@ NEWS TICKER
   }
   &-item{
     display: flex;
+    max-width: 400px;
     font-size: .75em;
-    color: $shield-grey;
+    color: $shield-grey;    
     padding: 0 0 0 1em;
     span{
-
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .news-next{
       padding: 0 1em;

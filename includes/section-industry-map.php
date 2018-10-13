@@ -1,11 +1,9 @@
     <!-- Section Industry Map -->
-    <section id="section-industry-map">
+    <section id="section-industry-map" class="padding-for-fix-header">
       <div class="grid-container full">
         <div class="grid-x">
           <div class="large-12 cell">
-            <div class="map-container">
-              <img src="assets/img/map.jpg" alt="map">
-            </div>
+            <div class="map-container" style="background-image:url('assets/img/map.jpg');"></div>
           </div>
         </div>
       </div>
@@ -22,7 +20,7 @@
           <div class="large-8 cell">
             <form action="search.php" role="search" method="get" id="searchform" class="search-form form">
               <div class="icon-inside icon-search icon-white">
-                <input placeholder="Type your search here" type="text" class="input rounded white">
+                <input placeholder="Type your search here" type="text" class="input rounded white-border">
                 <button class="arrow white"></button>
               </div>
             </form>
@@ -48,7 +46,6 @@
             <div class="table-scroll">
               <table class="industry-list stack">
                 <tbody>
-
                 <?php 
                   $icons = Array(
                     'green-acriculture-red',
@@ -57,18 +54,16 @@
                     'green-tech-red',
                     'green-waste-red'
                   );
-
                   for ($i=0; $i<9; $i++):
                     $icon = $icons[$i % 5];
                 ?>
                   <tr>
-                    <td><img src="assets/img/map_icons/red_icons/<?php echo $icon;?>.svg"></td>
+                    <td><img src="assets/img/map_icons/red_icons/<?php echo $icon;?>.svg" class="icon"></td>
                     <td>Archer Daniels Midland</td>
                     <td>Lloyminster, AB, Canada</td>
                     <td>Green agriculture</td>
                   </tr>
                 <?php endfor;?>
-
                 </tbody>
               </table>
             </div>

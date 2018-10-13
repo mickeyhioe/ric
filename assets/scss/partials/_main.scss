@@ -5,12 +5,19 @@ a{
   color: $black;
   @include transition($transition);
   &:hover{
-    color: $shield-grey;
-    
+    color: $shield-grey;    
   }
   &:focus,
   &:active{
     color: $black;
+  }
+  &.red{
+    color: $red;
+    border-bottom: 1px dotted transparent;
+    &:hover{
+      color: $red;
+      border-color: $red;
+    }
   }
   &.with-line{
       color: $red;

@@ -27,7 +27,7 @@ $(document).ready(function() {
         });
 
         //Default Param
-        param[slide] = '.slide-item';
+        param['slide'] = '.slide-item';
         
         // Build Slick
         $slide.slick(param);
@@ -131,13 +131,34 @@ $(document).ready(function() {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,
-                arrows: false
+                arrows: false,
+                centerMode: false,
               }
             }
         ]
     };
 
     slickSliderProgressBar($slide3, time3, param3 );
+
+
+    //Social Share Scroll
+    $(window).scroll(function(){
+        var dark_pos = $('section.bg-black').offset().top;
+        var dark_height = $('section.bg-black').height();
+        var social_share = $('#social-share').offset().top;
+        var scroll = $(window).scrollTop();
+    
+        if(social_share > dark_pos && social_share < (dark_pos + dark_height)) {
+            $('#social-share').addClass('menu_black');
+            $('#social-share').removeClass('menu_white');
+        }
+        else {
+            $('#social-share').removeClass('menu_black');
+            $('#social-share').addClass('menu_white');
+        }
+    
+    })
+
 
 
     // Hide Header on on scroll down
@@ -201,7 +222,6 @@ $(document).ready(function() {
     $('.parallax').paroller();
     $('.paroller').paroller();
 
-    $('.board-bio-item').hide();
 
     //Open Bio
     $('.board-grid-item').on('click', '.open-bio', function(e){
@@ -221,7 +241,7 @@ $(document).ready(function() {
         $('body, html').animate({scrollTop: pos});      
     });
 
-    //Close Button
+    //Close Bio Button
     $('.board-bio-item').on('click', '.close', function(e){
         e.preventDefault();
         id = $(this).attr('href');
