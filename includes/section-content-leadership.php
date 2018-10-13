@@ -117,7 +117,7 @@
             <h2 class="all-caps">Board of Directors</h2>
           </div>
 
-          <div class="grid-container section-padding">
+          <div class="grid-container section-padding-medium">
             <div class="board-grid grid-x grid-padding-x grid-padding-y align-center">
 
             <?php
@@ -155,7 +155,7 @@
                           <h3 class="all-caps"><?php echo $name;?></h3>
                           <div class="board-info">
                             <strong><?php echo $company;?></strong><br>
-                            <?php echo $position;?></strong>
+                            <?php echo $position;?>
                             <a href="<?php echo $linkedin;?>">Linkedin</a>
                           </div>
                         </div>
@@ -217,7 +217,7 @@
                   <h3 class="all-caps"><?php echo $name;?></h3>
                   <div class="board-info">
                     <strong><?php echo $company;?></strong><br>
-                    <?php echo $position;?></strong>
+                    <?php echo $position;?>
                     <a href="#<?php echo $bio_id; ?>" class="open-bio">Bio</a>
                   </div>
                 </div>

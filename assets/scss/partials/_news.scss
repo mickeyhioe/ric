@@ -1,7 +1,7 @@
 /*********************
-NEWS GRID
+NEWS MEDIUM
 *********************/
-.news-grid{
+.news-medium{
     @include breakpoint(medium){
         margin-top: 40px;
         margin-bottom: 40px;
@@ -84,16 +84,9 @@ NEWS CONTENT: META, TITLE, EXCERPT
 
 
 /*********************
-NEWS SLIDER: NAV ITEM
+NEWS SMALL
 *********************/
-.news-slider-nav{
-    display: none;
-    @include breakpoint(medium){
-        display: block;
-    }
-}
-
-.news-slider-nav-item{
+.news-small-item{
     &-inner{
         margin-bottom: 20px;
         display: flex;
@@ -130,15 +123,15 @@ NEWS SLIDER: NAV ITEM
 }
 
 /*********************
-NEWS SLIDER: MAIN
+NEWS LARGE: MAIN
 *********************/
-.news-slider-container{
+.news-large-container{
     width: 100%;
     @include breakpoint(xlarge){
         width: 80%;
     }
-    .news-slider{
-        .news-slider-item{
+    .news-large{
+        .news-large-item{
             position: relative;
             .img{
                 width: 100%;

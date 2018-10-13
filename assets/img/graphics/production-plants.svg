@@ -19,9 +19,9 @@
 	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
 	.st3{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st5{font-family:'DrukText-Bold';}
+	.st5{font-family:'Druk Text';}
 	.st6{font-size:100px;}
-	.st7{font-family:'NHaasGroteskTXPro-55Rg';}
+	.st7{font-family:'NeueHaasGroteskText Pro', Arial;}
 	.st8{font-size:12px;}
 </style>
 <switch>

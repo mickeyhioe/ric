@@ -1,6 +1,6 @@
 <?php 
   $page = "About";
-  $sub_page = "";
+  $sub_page = "Our Story";
   include('includes/header.php');
 ?>
 

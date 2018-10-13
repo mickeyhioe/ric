@@ -3,9 +3,10 @@ GENERAL STYLES
 *********************/
 a{
   color: $black;
+  @include transition($transition);
   &:hover{
     color: $shield-grey;
-    transition: .3s linear all;
+    
   }
   &:focus,
   &:active{
@@ -47,9 +48,6 @@ ul.list{
 SECTION PADDING
 *********************/
 
-.padding-for-fix-header{
-  padding-top: 100px;
-}
 .section-padding{
   padding-top: 3em;
   padding-bottom: 3em;
@@ -69,6 +67,18 @@ SECTION PADDING
       padding-bottom: 6em;
     }
   }
+  &-medium{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    @include breakpoint(medium){
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+    @include breakpoint(large){
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+  }
   &-top{
     padding-top: 3em;
     padding-bottom: 0;
@@ -83,8 +93,9 @@ SECTION PADDING
     }
   }
 }
+
 .section-padding-main{
-  padding-top: 4em;
+  padding-top: 5em;
   padding-bottom: 3em;
   @include breakpoint(medium){
     padding-top: 6em;
@@ -92,6 +103,9 @@ SECTION PADDING
   }
 }
 
+.padding-for-fix-header{
+  padding-top: 100px;
+}
 /*********************
 SECTION MARGIN
 *********************/

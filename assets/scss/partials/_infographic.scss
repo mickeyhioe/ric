@@ -1,0 +1,20 @@
+/*********************
+INFOGRAPHIC
+*********************/
+.infographic{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    .number{
+        font-family: $secondary_bold;        
+        font-size: 5em;
+        padding: 1rem;
+        border-bottom: 1px solid $black;
+        .bg-black &{
+            border-color: $white;
+        }
+    }
+    .description{
+        padding: 1rem;
+    }
+}

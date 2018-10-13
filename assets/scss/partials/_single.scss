@@ -1,80 +1,9 @@
 /*********************
-ARTICLE INFO
-*********************/
-.article-info {
-	margin-bottom: 20px;
-	@include breakpoint($medium){
-		padding-bottom: 35px;
-		margin-bottom: 35px;
-		border-bottom: 1px solid $light-gray;
-	}
-	.author-image-name-popularity {
-		padding: 10px 0 20px;
-		@include breakpoint($medium){
-			padding: 20px 0;
-		}
-		.author-image{
-			margin-right: 10px;
-			@include breakpoint($medium){
-				margin-right: 20px;
-			}
-			img{
-				width: 60px;
-				height: auto;
-				-webkit-border-radius: 50%;
-				border-radius: 50%;
-				@include breakpoint($medium){
-					width: 70px;
-				}
-			}
-		}
-	}
-
-	.article-activity {
-		text-align: center;
-		@include breakpoint(medium){
-			text-align: right;
-		}
-	}
-
-	.article-categories-info {
-		>div{
-			text-align: center;
-			@include breakpoint(medium){
-				text-align: left;
-			}
-		}
-		.cat-icon{
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: 10px;
-			margin-left: 10px;
-		}
-		p{
-			margin-bottom: 0;
-			display: inline-block;
-		}
-
-		a{
-			color: $medium-blue;
-			font-size: .8em;
-			border-bottom: 1px dotted transparent;
-			&:hover,
-			&:focus,
-			&:active{
-				border-bottom-color: $medium-blue;
-			}
-		}
-	}
-}
-
-/*********************
 AUTHOR NAME
 *********************/
 .author-name{
 	.name {
-		color: $blue;
-		font-family: $proximanova_bold;
+		color: $red;
 		display: block;
 		@include breakpoint($medium){
 			display: inline-block;
@@ -82,86 +11,72 @@ AUTHOR NAME
 	}
 	.article-time {
 		font-size: .9em;
-		color: $medium-gray;
+		color: $grey;
 		display: block;
 	}
 }
 
 /*********************
-BUTTON FOLLOW
+FEATURED IMAGE & CAPTION 
 *********************/
-
-.button-follow{
-	display: inline-block;
-	font-size: .75em;
-	border: 1px solid $blue;
-	border-radius: 5px;
-	padding: 2px 5px;
-	margin-left: 12px;
-	font-family: $activgrotesk;
-	&:before{
-		content: '\f004';
-		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
-		display: inline-block;
-		margin-right: 5px;
-
-	}
-	&:hover,
-	&:focus,
-	&:active{
-		background: $blue;
-		color: $white;
-	}
-}
-
-
-/*********************
-ACTIVITY INFO
-*********************/
-
-.activity-info {
-	display: inline-block;
-	font-size: 1em;
-	line-height: 105%;
-	font-weight: 600;						
+.featured-image{
 	position: relative;
-	border: 1px solid $blue;
-	opacity: 1;    
-	transition: opacity .5s ease;
-	margin-left: 18px;
-	text-align: left;
-	&.comments-info:before {
-		background-image: url(https://retipster.com/wp-content/themes/retipster/img/icons/comment.svg);
-		width: 26px;
-		height: 20px;
-		margin-top: -9px;
-		content: '';
-		background-size: contain;
-		background-position: center;
-		position: absolute;
-		top: 50%;
-		left: 17px;
+	margin-bottom: 2em;
+	background-color: $rocky-grey;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	@include transition($transition);
+	@include breakpoint($medium){
+		height: 350px;
 	}
-	a{
-		color: inherit;
-		display: block;
-		padding-left: 54px;
-		padding-top: 11px;
-		padding-bottom: 10px;
-		padding-right: 17px;
+	@include breakpoint($large){
+		height: 450px;
+		margin-bottom: 4em;
+	}
+	@include breakpoint($xlarge){
+		height: 550px;
 	}
 }
 
+.caption{
+	position: absolute;
+	background: $white;
+	font-size: .875em;
+	line-height: 1;
+	padding: 10px 20px;
+	color: $stone-grey;
+	bottom: 0;
+	right: 0; 
+}
+
+
 /*********************
-ARTICLE CONTENT
+PAGE CONTENT
 *********************/
-
-.article-content{
-	h1, h2, h3, h4, h5, h6 {
-		color: $blue;
+.page-title{
+	@include breakpoint(large){
+		margin-bottom: 2rem;
 	}
+}
+.page-container{
+	@include breakpoint(large){
+		margin-right: 40px;
+	}
+	@include breakpoint(xlarge){
+		margin-right: 130px;
+	}
+}
 
+.page-content{
+	
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6{
+		font-family: $secondary_regular;
+		text-transform: uppercase;
+		line-height: 1.1;
+	}
 	h1,.h1{
 		font-size: 2em;
 	}
@@ -179,57 +94,50 @@ ARTICLE CONTENT
 	}
 
 	h5, .h5{
-		font-size: 1.1em;
+		font-size: 1.125em;
 	}
 
 	h6, .h6{
 		font-size: 1em;
 	}
 
-	li, p{
-		font-size: 1em;
-	}
-
 	@include breakpoint(medium){
 		h1,.h1{
-			font-size: 2.25em;
+			font-size: 2.5em;
 		}
 	
 		h2, .h2{
-			font-size: 2em;
+			font-size: 2.25em;
 		}
 	
 		h3, .h3{
-			font-size: 1.75em;
+			font-size: 2em;
 		}
 	
 		h4, .h4{
-			font-size: 1.5em;
+			font-size: 1.75em;
 		}
 	
 		h5, .h5{
-			font-size: 1.25em;
+			font-size: 1.5em;
 		}
 	
 		h6, .h6{
-			font-size: 1em;
-		}
-	
-		li, p{
-			font-size: 1.1em;
+			font-size: 1.25em;
 		}
 
+		p, ul, ol{
+			margin-bottom: 1.5rem;
+			font-size: 1.125em;			
+		}
 	}
 
-	p, ul, ol{
-		margin-bottom: 1.5rem;
-	}
 
 	a{
-		color: $medium-blue;
-		border-bottom: 1px dotted transparent;
+		color: $red;
+		border-bottom: 1px dotted $red;
 		&:hover{
-			border-bottom-color: $medium-blue;
+			border-bottom-color: transparent;
 		}
 	}
 	
@@ -242,11 +150,6 @@ ARTICLE CONTENT
 			max-width: 100%;
 			width: auto;
 		}
-	}
-
-	blockquote,
-	figure.wp-caption,
-	img{
 		&.alignright{
 			margin: 10px 0 25px 25px;
 		}
@@ -254,7 +157,7 @@ ARTICLE CONTENT
 			margin: 10px 25px 25px 0;
 		}
 		&.aligncenter{
-			margin: 10px 10px 25px;
+			margin: 1em 0 2em;
 		}
 		@include breakpoint(medium){
 			&.alignleft,
@@ -263,6 +166,14 @@ ARTICLE CONTENT
 			}
 		}
 	}
+	
+
+	.image-with-caption{
+		margin: 2.5em 0;
+		position: relative;
+	}
+
+
 	.alignright {
 		float: right;
 	}
@@ -275,15 +186,40 @@ ARTICLE CONTENT
 	}
 
 	blockquote{
-		border-left: 8px solid $medium-blue;
-		padding-top: 0;
-	}
-	blockquote,
-	blockquote p{
-		font-size: 1.2em;
-		line-height: 1.6;
-		color: $medium-blue;
-		font-style: italic;
+		border: none;
+		border-top: 1px solid $black;
+		border-bottom: 1px solid $black;
+		padding: 2em 1em;
+		margin: 2em 0;
+		color: $black;
+		text-align: center;
+		@include breakpoint(large){
+			margin: 3.75em 0;
+			padding: 3.75em 2em;
+		}
+		p{
+			font-size: 2em;
+			line-height: 1;			
+			text-transform: uppercase;
+			font-family: $secondary_regular;			
+			color: $black;
+			quotes: "“" "”" "‘" "’";
+			&:before{
+				content: open-quote;
+			}
+			&:after {
+				content: close-quote;
+			}
+			@include breakpoint(large){
+				font-size: 2.5em;
+			}
+		}
+		.author{
+			font-family: $primary_regular;
+			@include breakpoint(large){
+				font-size: 1.125em;
+			}
+		}		
 	}
 
 	.video-wrapper {
@@ -304,162 +240,118 @@ ARTICLE CONTENT
 
 
 /*********************
-SOCIAL LINKS
-*********************/
-.social-links {
-	text-align: center;
-	color: $blue;
-	border: 1px solid $blue;
-	position: relative;
-	padding: 10px 20px 10px 20px;
-}
-					
-/*********************
-ABOUT AUTHOR
+PAGE CREDIT
 *********************/
 
-.article-about-author {
-	text-align: center;
-	.author-image{ 
+.page-credit{
+	padding: 2.5em 0;
+	&-title{
+		font-family: $primary_bold;
+		font-size: 1.125em;
+		padding-bottom: 2em;
+		display: block;
+	}
+	&-inner{
+		display: flex;
+		align-content: center;
+		align-items: center;
+	}
+	&-image{
+		margin-right: 20px;
 		img {
-			width: 80px;
+			width: 100px;
 			height: auto;
-			-webkit-border-radius: 50%;
 			border-radius: 50%;
 		}
 	}
-	
-	.author-name{
-		padding-top: 10px;
+	&-info{
+		h3{
+			text-transform: uppercase;
+		}
+		> div{
+			font-size: .875em;
+			line-height: 1.3;
+		}
 	}
-	.author-image-name {
-		padding-bottom: 20px;
- 		> div{
-			 &:first-child {
-				text-align: right;
-			}	
-			&:last-child {
-				text-align: left;
+}
+
+/*********************
+PAGE NAVIGATION
+*********************/
+.page-navigation{
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid $black;
+	padding: 2em 0;
+	@include breakpoint(large){
+		padding: 3.125em 0;
+	}
+	.button-previous,
+	.button-next{
+		a{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-family: $secondary_regular;
+			text-transform: uppercase;
+			font-size: 0;
+			@include breakpoint(medium){
+				font-size: 1.125em;
+			}
+		}
+	}
+
+}
+
+.button-previous,
+.button-next{
+	a{	
+		display: block;
+		&:before,
+		&:after{
+			content: "";
+			background-image: url(../img/graphics/arrow.svg);
+			background-size: 8px 8px;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			width: 40px;
+			height: 40px;
+			opacity: 1;
+			font-size: 0;
+			display: block;
+			background-size: 10px 10px;
+			border: 1px solid $black;
+			@include transition($transition);
+		}
+		&:hover{
+			&:before,
+			&:after{
+				background-color: $light-grey;
 			}
 		}
 	}
 }
 
-/*********************
-ADDITIONAL INFO
-*********************/
-
-.additional-info {
-	border: 1px solid $blue;
-	background-color: $light-blue;
-	padding: 20px;
-	.image{
-		display: none;
-		@include breakpoint(medium){
-			display: block;
-			margin-right: 20px;
+.button-previous{
+	a{
+		&:before{
+			@include transform(rotate(-180deg));
+			margin-right: 10px;
 		}
-	}
-	h3{
-		font-size: 1.25em;
-	}
-	p{
-		font-size: 1em;
-		@include breakpoint(large){
-			margin-bottom: 0;
+		&:after{
+			display: none;
 		}
 	}
 }
 
-/*********************
-ARTICLE HELPFUL
-*********************/
-
-.article-helpful {
-	border: 1px solid $blue;
-	background-color: $light-blue;
-	padding: 20px;
-	h3{
-		font-size: 1.25em;
-	}
-	p{
-		font-size: 1em;
-		@include breakpoint(large){
-			margin-bottom: 0;
+.button-next{
+	a{
+		&:before{
+			display: none;
+			
+		}
+		&:after{
+			margin-left: 10px;
 		}
 	}
- 	img {
-		width: 80%;
-		max-width: 80px;
-	}
-}	
-
-/*********************
-SIDEBAR WRAPPER
-*********************/
-
-.article-sidebar-wrapper {
-	margin-top: 20px;
-	@include breakpoint(medium){
-		margin-top: 40px;
-	}
-	@include breakpoint(large){
-		padding-left: 20px;
-		margin-top: 0;
-	}
-	.article-sidebar-item {
-		margin-bottom: 40px;
-		position: relative;
-		
-	}
-}
-.widgettitle {
-	text-align: center;
-}
-
-/*********************
-SUBSCRIBE TODAY
-*********************/
-
-.subscribe-today {
-	text-align: center;
-	border: 1px solid $blue;
-	position: relative;
-	padding: 30px 30px 30px 30px;
-	&-message {
-		display: inline-block;
-		font-size: 1.2em;
-		padding: 18px 0px 20px 22px;
-	}
-	form {
-		.button.rounded {
-			max-width: 260px;
-			min-width: 186px;
-			width: auto;
-			display: inline-block;
-			margin: 0px auto;
-		}
-	}
-}
-
-/*********************
-SIDEBAR BIO
-*********************/
-
-.sidebar-bio {
-	text-align: center;
-	color: $blue;	
-	border: 1px solid $blue;
-	position: relative;
-	&-content {
-		text-align: center;
-		color: $blue;	
-		padding: 26px 20px 20px 20px;
-	}
-}
-					 
-
-
-.related-articles-title-row {
-	height: 60px;	
 }

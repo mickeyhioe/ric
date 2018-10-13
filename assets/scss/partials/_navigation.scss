@@ -191,9 +191,7 @@ MOBILE MENU
           font-size: 3.75em;
         }
         &:focus,
-        &:active{
-          color: $black;
-        }
+        &:active,
         &:hover{
           color: $black;
         }
@@ -233,6 +231,14 @@ MOBILE MENU
             }
           }       
          
+        }
+        &.active{
+          a{
+            &:after,
+            &:before{
+              background: $black;
+            }
+          }
         }
       }
     }

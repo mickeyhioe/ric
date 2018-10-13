@@ -10,7 +10,7 @@
           <div class="medium-11 cell">
 
             <!-- Slide -->
-            <div class="slide slick">
+            <div class="main-slider slide vertical-orientation">
               
               <?php
                   $slides = array(
@@ -35,7 +35,7 @@
                       $content = $slides[$num]['content'];
                       $cta = $slides[$num]['cta'];
               ?>
-              <div class="grid-container">
+              <div class="grid-container slide-item">
                 <div class="grid-x align-middle align-center">
                   <div class="xlarge-6 medium-5 medium-order-1 small-order-2 cell">
                     <div class="slide-content">

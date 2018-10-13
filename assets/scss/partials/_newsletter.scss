@@ -1,0 +1,34 @@
+/*********************
+NEWSLETTER
+*********************/
+
+.newsletter-box{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 2px solid $black;
+    background-image: url('../img/graphics/sign-up.svg');
+    background-repeat: none;
+    background-size: auto 150px;
+    background-repeat: no-repeat;
+    background-position: center 2em;
+    height: 350px;
+    &-inner{
+        padding: 20px 20px 2em;
+        h3{
+            line-height: 1.1;
+        }
+    }
+    @include breakpoint(large){
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 500px;
+        background-size: contain;
+        &-inner{
+            padding: 2em 20px 3em;
+            h3{
+                padding-bottom: 1em;
+            }
+        }
+    }
+    
+}

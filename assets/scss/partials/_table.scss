@@ -1,0 +1,34 @@
+/*********************
+TABLE
+*********************/
+
+table{
+    &.industry-list{
+        border: none;
+        margin: 2em 0;
+        thead{
+        
+        }
+        tbody{
+            border: none;
+            border-top: 1px solid $light-grey;
+            tr{
+                border-bottom: 1px solid $light-grey;
+                &:nth-child(2n){
+                    background: $white;
+                }
+                &:hover{
+                    background: $light-grey;
+                }
+                td{
+                    font-size: .875em;
+                    @include breakpoint(medium){
+                        padding-top: 1.5em;
+                        padding-bottom: 1.5em;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

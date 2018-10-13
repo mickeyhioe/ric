@@ -2,7 +2,10 @@
     border: 1px solid $black;
     background: transparent;    
     color: $black;
-    box-shadow: none; 
+    box-shadow: none;
+    @include placeholder{
+        color: lighten($black, 30%);
+    }
     &.rounded{
         padding-left: 20px;
         padding-right: 20px;
@@ -14,6 +17,17 @@
             width: calc(100% - 10px);
         }
     }
+    &.white{
+        border-color: $white;
+        color: $white;
+        @include placeholder{
+            color: $white;
+        }
+        &:focus{
+            background: $black;
+        }
+
+    }
 }
 
 .icon-inside{
@@ -23,10 +37,6 @@
         margin-bottom: 0;
         padding-left: 50px;        
         height: 42px;
-        @include placeholder{
-            color: $black;
-            font-size: .8em;
-        }
     }
     &.icon-email::before{
         background-image: url(../img/graphics/mail.svg);
@@ -46,6 +56,20 @@
         left: 5px;
         position: absolute;
     }
+    &.icon-white{
+        [type=email],
+        [type=text]{
+            @include placeholder{
+                color: $white;
+            }
+        }
+        &.icon-email::before{
+            background-image: url(../img/graphics/mail-white.svg);
+        }
+        &.icon-search::before{
+            background-image: url(../img/graphics/search-white.svg);
+        }
+    }
     
     button.arrow{
         position: absolute;
@@ -58,5 +82,8 @@
         background-repeat: no-repeat;
         background-size: 50%;
         background-position: center center;
+        &.white{
+            background-image: url(../img/graphics/arrow-white.svg);
+        }
     }
 }

@@ -95,6 +95,6 @@
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.min.js"></script>
     <script src="assets/js/vendor/ResizeSensor.js"></script>
-    <script src="assets/js/scripts/app.js?2"></script>
+    <script src="assets/js/scripts/app.js?4"></script>
   </body>
 </html>

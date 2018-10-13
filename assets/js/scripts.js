@@ -5,6 +5,9 @@ $(document).ready(function() {
     //Function to create Slick Slide with Progress Bar
     function slickSliderProgressBar($slide, time, param){
         var progressContainer = '<div class="slider-progress-container"><div class="slider-progress"><div class="progress"></div></div><div class="paging-info"></div></div>';
+
+        var dots  = $('.slick-dots');
+
         var $bar,
             isPause,
             tick,
@@ -23,6 +26,9 @@ $(document).ready(function() {
             $slide.find('.paging-info').text('0'+ i + '/' + '0'+ slick.slideCount);
         });
 
+        //Default Param
+        param[slide] = '.slide-item';
+        
         // Build Slick
         $slide.slick(param);
     
@@ -36,6 +42,10 @@ $(document).ready(function() {
             mouseleave: function() {
                 isPause = false;
             }
+        });
+
+        $('.slick-dots').on('click', function() {
+            startProgressbar();
         });
     
         function startProgressbar() {
@@ -70,7 +80,7 @@ $(document).ready(function() {
 
 
     // Main Slider
-    var $slide1 = $('.slide');
+    var $slide1 = $('.main-slider');
     var time1 = 5;
     var param1 = {
         arrows: true,
@@ -104,6 +114,30 @@ $(document).ready(function() {
         vertical: true,
         verticalSwiping: true
     });
+
+    // Industry Slider
+    var $slide3 = $('.industry-slider');
+    var time3 = 4;
+    var param3 = {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false
+              }
+            }
+        ]
+    };
+
+    slickSliderProgressBar($slide3, time3, param3 );
 
 
     // Hide Header on on scroll down

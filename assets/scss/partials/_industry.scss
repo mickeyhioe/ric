@@ -1,0 +1,11 @@
+/*********************
+INDUSTRY
+*********************/
+
+.map-container{
+    height: 500px;
+    overflow: hidden;
+    @include breakpoint(large){
+        height: 600px;
+    }
+}

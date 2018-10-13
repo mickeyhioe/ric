@@ -139,7 +139,9 @@ BOARD OF DIRCTORS
 
 .board-bio{
     &-item{
-
+        @include breakpoint(large){
+            margin-bottom: 6em;
+        }
         .board-bio-img-container{
             position: relative;
         }
