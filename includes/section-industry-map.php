@@ -1,5 +1,5 @@
     <!-- Section Industry Map -->
-    <section id="section-industry-map" class="padding-for-fix-header">
+    <section id="section-industry-map">
       <div class="grid-container full">
         <div class="grid-x">
           <div class="large-12 cell">

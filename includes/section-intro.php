@@ -4,7 +4,7 @@
       }
     ?>
     <!-- Section Intro -->
-    <section id="section-intro" class="full-height padding-for-fix-header">
+    <section id="section-intro">
       <div class="grid-container">
         <div class="grid-x align-center">
           <div class="medium-11 cell">

@@ -1,6 +1,6 @@
 <!-- Social Share -->
 <div class="social-share-container ">    
-    <nav class="social-share light-bg">
+    <nav class="social-share">
         <h3>Share</h3>
         <span class="line"></span>
         <ul>

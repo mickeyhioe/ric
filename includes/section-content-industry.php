@@ -21,12 +21,12 @@
   );
 
   $output = '<div class="grid-container">';
-  $output .= '<div class="grid-x">';
+  $output .= '<div class="grid-x align-center">';
   foreach(array_keys($infographic) as $num):
     $number = $infographic[$num]['number'];
     $description = $infographic[$num]['description'];
 
-    $output .= '<div class="large-6 cell">';
+    $output .= '<div class="medium-6 small-11 cell">';
     $output .= '<div class="infographic">';
     $output .= '<div class="number">'.$number.'</div>';
     $output .= '<div class="description">'.$description.'</div>';
@@ -108,8 +108,6 @@
 ?>
       <!-- Section Content Industry -->
       <section id="section-content-industry">
-
-       
 
         <?php
           foreach(array_keys($sections) as $num):

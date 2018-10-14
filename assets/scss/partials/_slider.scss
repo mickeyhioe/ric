@@ -167,7 +167,7 @@ SLIDER ARROWS : VERTICAL
     @include breakpoint(medium){
       @include transform-origin(0 50%);
       @include transform( rotate(-90deg) translate(-50%, 50%));
-      left: -40px;
+      left: -20px;
       top: 50%;
       margin-top: -60px;
       position: absolute;
@@ -176,7 +176,7 @@ SLIDER ARROWS : VERTICAL
     }
 
     @include breakpoint(large){
-      left: -50px;
+      left: -30px;
     }
 
     @include breakpoint(1580px){
@@ -189,12 +189,9 @@ SLIDER ARROWS : VERTICAL
   .slick-next{
     top: 50%;
     left: initial;
-    right: -40px;
-    @include breakpoint(large){
-      right: -50px;
-    }
+    right: 0;
     @include breakpoint(xlarge){
-      right: -55px;
+      right: -25px;
     }
   }
   .slick-prev{
@@ -240,13 +237,22 @@ SLIDER ARROWS : VERTICAL
 
 .industry-slider{
   .slick-slide{
-    opacity: .3;
+    opacity: 1;
+    @include breakpoint(large){
+      opacity: .3;
+    }
     img, .slick-content{
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
+      @include breakpoint(large){
+        width: 80%;
+        margin: 0 auto;
+      }
     }
     p{
-      opacity: 0;
+      opacity: 1;
+      @include breakpoint(large){
+        opacity: 0;
+      }
     }
   }
   .slick-center{

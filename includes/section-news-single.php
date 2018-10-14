@@ -1,6 +1,6 @@
    
     <!-- Section News Single -->
-    <section id="section-news-single" class="padding-for-fix-header bg-white">
+    <section id="section-news-single" class="bg-white">
 
       <div class="grid-container"> 
         <div class="grid-x align-center">

@@ -1,5 +1,5 @@
     <!-- Section Intro Leadership -->
-    <section id="section-intro-leadership" class="full-height padding-for-fix-header">
+    <section id="section-intro-leadership">
       <div class="grid-container">
         <div class="grid-x align-center">
           <div class="large-11 cell">

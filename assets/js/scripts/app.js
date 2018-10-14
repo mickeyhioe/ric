@@ -44,7 +44,7 @@ $(document).ready(function() {
             }
         });
 
-        $('.slick-dots').on('click', function() {
+        $('.slick-dots, .slick-arrow').on('click', function() {
             startProgressbar();
         });
     
@@ -117,7 +117,7 @@ $(document).ready(function() {
 
     // Industry Slider
     var $slide3 = $('.industry-slider');
-    var time3 = 4;
+    var time3 = 8;
     var param3 = {
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -143,18 +143,21 @@ $(document).ready(function() {
 
     //Social Share Scroll
     $(window).scroll(function(){
-        var dark_pos = $('section.bg-black').offset().top;
-        var dark_height = $('section.bg-black').height();
-        var social_share = $('#social-share').offset().top;
+        var $bg_black = $('section.bg-black');
+        var $share = $('.social-share');
+        var $intro = $('#section-intro');
+        var share_height = $share.offset().top;
         var scroll = $(window).scrollTop();
-    
-        if(social_share > dark_pos && social_share < (dark_pos + dark_height)) {
-            $('#social-share').addClass('menu_black');
-            $('#social-share').removeClass('menu_white');
-        }
-        else {
-            $('#social-share').removeClass('menu_black');
-            $('#social-share').addClass('menu_white');
+
+        if ( $bg_black.length ){
+            var dark_pos = $bg_black.offset().top;
+            var dark_height = $bg_black.height();           
+            if(share_height > dark_pos && share_height < (dark_pos + dark_height)) {
+                $share.addClass('dark-bg');
+            }
+            else {
+                $share.removeClass('dark-bg');
+            }
         }
     
     })

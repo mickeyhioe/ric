@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/js/vendor/slick/slick.css">
     <link rel="stylesheet" href="assets/js/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/style.min.css?4">
+    <link rel="stylesheet" href="assets/css/style.min.css?1">
     
   </head>
 
@@ -74,29 +74,51 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
       <div class="grid-container">
-        <div class="grid-x align-center">
-          <div class="medium-6 large-4 cell">
-            <!-- Search Form -->
-            <div class="search-form">
+        <div class="grid-x full-height">
 
-              <form action="search.php" role="search" method="get" id="searchform" class="search-form form">
-                <div class="icon-inside icon-search">
-                  <input placeholder="Search" type="text" class="input rounded">
-                  <button class="arrow"></button>
+          <div class="cell">
+
+            <!-- Search Form -->
+            <div class="grid-x align-center">
+              <div class="medium-6 large-4 cell">            
+                <div class="search-form">
+                  <form action="search.php" role="search" method="get" id="searchform" class="search-form form">
+                    <div class="icon-inside icon-search">
+                      <input placeholder="Search" type="text" class="input rounded">
+                      <button class="arrow"></button>
+                    </div>
+                  </form>
                 </div>
-              </form>
-        
+                
+              </div>
             </div>
             <!-- /Search Form -->
           </div>
-        </div>
-        <div class="grid-x align-center">
-          <div class="small-12 cell">
 
-            <?php include('includes/main-menu.php');?>
+          <div class="cell align-self-stretch align-middle">
+
+            <!-- Main Menu -->
+            <div class="grid-x align-center">
+              <div class="small-12 cell">
+                <?php include('includes/main-menu.php');?>
+              </div>
+            </div>
+            <!-- /Main Menu -->
 
           </div>
-        </div>  
+
+          <div class="cell align-self-bottom">
+
+            <!-- Main Menu Footer-->
+            <div class="grid-x align-center ">
+              <div class="small-12 cell">
+                <?php include('includes/main-menu-footer.php');?>
+              </div>
+            </div>
+            <!-- /Main Menu Footer-->
+          </div>
+
+        </div>
       </div>
     </div>
     <!-- /Mobile Menu -->

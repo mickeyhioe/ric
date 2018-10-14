@@ -110,9 +110,15 @@ SECTION PADDING
   }
 }
 
-.padding-for-fix-header{
-  padding-top: 100px;
+.padding-for-fix-header,
+.wrapper{
+  padding-top: 80px;
+  @include breakpoint(medium){
+    padding-top: 100px;
+  }
 }
+
+
 /*********************
 SECTION MARGIN
 *********************/

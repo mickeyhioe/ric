@@ -1,10 +1,11 @@
     <!-- Section Contact -->
-    <section id="section-contact" class="full-height bg-contact">
+    <section id="section-contact" class="bg-contact">
       <div class="grid-container">
         <div class="grid-x align-center">
           <div class="large-11 cell">
             <div class="grid-container">
-              <div class="grid-x align-middle align-center full-height">
+
+              <div class="grid-x align-top section-padding full-height with-top-bar align-center">
                 <div class="large-7 medium-10 cell">
                   <div class="slide-content">
                     <span class="section-title">CONTACT</span>
@@ -41,6 +42,7 @@
                   </form>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>

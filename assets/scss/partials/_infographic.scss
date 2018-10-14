@@ -8,6 +8,7 @@ INFOGRAPHIC
     .number{
         font-family: $secondary_bold;        
         font-size: 5em;
+        line-height: 1;
         padding: 1rem;
         border-bottom: 1px solid $black;
         .bg-black &{

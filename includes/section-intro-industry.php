@@ -1,5 +1,5 @@
 <!-- Section Intro Industry -->
-<section id="section-intro-industry" class="full-height padding-for-fix-header">
+<section id="section-intro-industry">
   <div class="grid-container">
     <div class="grid-x align-center">
       <div class="medium-11 cell">
@@ -66,7 +66,7 @@
         <div class="cell auto show-for-medium">       
           <!-- Learn More -->
           <div class="learn-more">
-            <a class="button bg-black xlarge with-arrow-down margin-0" href="#section-about" rel="slideTo">Learn More <span class="line"></span></a>
+            <a class="button bg-black xlarge with-arrow-down margin-0" href="#section-content-industry" rel="slideTo">Learn More <span class="line"></span></a>
           </div>
           <!-- /Learn More -->
         </div>

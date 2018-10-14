@@ -6,7 +6,7 @@
     ?>
     
     <!-- Section News -->
-    <section id="section-news" class="section-padding bg-white">
+    <section id="section-news" class="bg-white <?php if($page == "Home") echo "section-padding";?>">
 
       <div class="grid-container"> 
         <div class="grid-x align-center">
