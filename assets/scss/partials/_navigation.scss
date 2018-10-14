@@ -123,7 +123,7 @@ MOBILE MENU
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
   background: $white;
-  @include breakpoint(large){
+  @include breakpoint(medium){
     padding-top: 90px;
   }
   &.open {
@@ -131,10 +131,13 @@ MOBILE MENU
     visibility: visible;
     height: 100%;
     z-index: 9999;
+    .mobile-menu-container{
+      height: 100%;
+    }
     nav.main-menu{
       li {
         animation: fadeInRight .5s ease forwards;
-        animation-delay: .35s;      
+        animation-delay: .35s;    
         &:nth-of-type(2) {
           animation-delay: .4s;
         }
@@ -156,7 +159,7 @@ MOBILE MENU
 
   .full-height{
     min-height: calc(100vh - 70px);
-    @include breakpoint(large){
+    @include breakpoint(medium){
       min-height: calc(100vh - 90px);
     }
   }
@@ -184,7 +187,15 @@ MOBILE MENU
         justify-content: center;
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 5px;
+        @include breakpoint(medium){
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        @include breakpoint(large){
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
         &.active{
           > a{
             color: $black;
@@ -195,7 +206,7 @@ MOBILE MENU
           position: relative;
           font-family: $secondary_regular;
           font-weight: bold;
-          font-size: 2.75em;
+          font-size: 2.5em;
           color: rgba($black, .2);
           text-transform: uppercase;
           text-decoration: none;
@@ -276,10 +287,12 @@ MOBILE MENU
 @keyframes fadeInRight {
   0% {
     opacity: 0;
+    //top: 10%;
     left: 20%;
   }
   100% {
     opacity: 1;
+    //top:0;
     left: 0;
   }
 }
@@ -302,17 +315,21 @@ MOBILE MENU
       flex: none;
     }
   }
-  .nav-menu .menu a{
+  .nav-footer-menu .menu a{
     text-transform: uppercase;
-    font-size: .75em;
-    padding: .2rem .5rem;
+    font-size: .65em;
+    padding: .2rem .2rem;
     @include breakpoint(medium){
       font-size: .875em;
       padding: .7rem 1rem;
     }
   }
   p{
-    font-size: .875em;
+    font-size: .65em;
+    line-height: 1.2;
+    @include breakpoint(medium){
+      font-size: .875em;
+    }
   }
 }
 

@@ -14535,8 +14535,12 @@ ul.list li {
 SECTION PADDING
 *********************/
 .section-padding {
-  padding-top: 3em;
-  padding-bottom: 3em; }
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  @media print, screen and (min-width: 40em) {
+    .section-padding {
+      padding-top: 3em;
+      padding-bottom: 3em; } }
   @media print, screen and (min-width: 64em) {
     .section-padding {
       padding-top: 6em;
@@ -14583,11 +14587,9 @@ SECTION PADDING
       padding-top: 6em;
       padding-bottom: 6em; } }
 
-.padding-for-fix-header,
 .wrapper {
   padding-top: 80px; }
   @media print, screen and (min-width: 40em) {
-    .padding-for-fix-header,
     .wrapper {
       padding-top: 100px; } }
 
@@ -15074,7 +15076,7 @@ MOBILE MENU
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
   background: white; }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 40em) {
     .mobile-menu {
       padding-top: 90px; } }
   .mobile-menu.open {
@@ -15082,6 +15084,8 @@ MOBILE MENU
     visibility: visible;
     height: 100%;
     z-index: 9999; }
+    .mobile-menu.open .mobile-menu-container {
+      height: 100%; }
     .mobile-menu.open nav.main-menu li {
       -webkit-animation: fadeInRight .5s ease forwards;
       animation: fadeInRight .5s ease forwards;
@@ -15104,7 +15108,7 @@ MOBILE MENU
         animation-delay: .60s; }
   .mobile-menu .full-height {
     min-height: calc(100vh - 70px); }
-    @media print, screen and (min-width: 64em) {
+    @media print, screen and (min-width: 40em) {
       .mobile-menu .full-height {
         min-height: calc(100vh - 90px); } }
   .mobile-menu nav.main-menu {
@@ -15139,7 +15143,15 @@ MOBILE MENU
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        padding: 10px; }
+        padding: 5px; }
+        @media print, screen and (min-width: 40em) {
+          .mobile-menu nav.main-menu ul li {
+            padding-top: 10px;
+            padding-bottom: 10px; } }
+        @media print, screen and (min-width: 64em) {
+          .mobile-menu nav.main-menu ul li {
+            padding-top: 15px;
+            padding-bottom: 15px; } }
         .mobile-menu nav.main-menu ul li.active > a {
           color: black; }
         .mobile-menu nav.main-menu ul li a {
@@ -15147,7 +15159,7 @@ MOBILE MENU
           position: relative;
           font-family: "Druk Text", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
           font-weight: bold;
-          font-size: 2.75em;
+          font-size: 2.5em;
           color: rgba(0, 0, 0, 0.2);
           text-transform: uppercase;
           text-decoration: none;
@@ -15242,17 +15254,21 @@ MOBILE MENU
     -ms-flex: none;
     flex: none; }
 
-.mobile-menu.open .nav-menu .menu a {
+.mobile-menu.open .nav-footer-menu .menu a {
   text-transform: uppercase;
-  font-size: .75em;
-  padding: .2rem .5rem; }
+  font-size: .65em;
+  padding: .2rem .2rem; }
   @media print, screen and (min-width: 40em) {
-    .mobile-menu.open .nav-menu .menu a {
+    .mobile-menu.open .nav-footer-menu .menu a {
       font-size: .875em;
       padding: .7rem 1rem; } }
 
 .mobile-menu.open p {
-  font-size: .875em; }
+  font-size: .65em;
+  line-height: 1.2; }
+  @media print, screen and (min-width: 40em) {
+    .mobile-menu.open p {
+      font-size: .875em; } }
 
 /*********************
 STICKY NAVIGATION
@@ -15648,16 +15664,17 @@ SOCIAL SHARE
         text-align: center; }
         .social-share-container .social-share ul li a:hover {
           color: #cc0d1f; }
-    .social-share-container .social-share.dark-bg h3 {
-      color: white; }
-    .social-share-container .social-share.dark-bg .line:before {
-      background: white; }
-    .social-share-container .social-share.dark-bg ul li a {
-      color: white; }
-      .social-share-container .social-share.dark-bg ul li a:hover {
-        color: #cc0d1f; }
-        .social-share-container .social-share.dark-bg ul li a:hover i {
-          color: inherit; }
+    @media print, screen and (min-width: 40em) {
+      .social-share-container .social-share.dark-bg h3 {
+        color: white; }
+      .social-share-container .social-share.dark-bg .line:before {
+        background: white; }
+      .social-share-container .social-share.dark-bg ul li a {
+        color: white; }
+        .social-share-container .social-share.dark-bg ul li a:hover {
+          color: #cc0d1f; }
+          .social-share-container .social-share.dark-bg ul li a:hover i {
+            color: inherit; } }
 
 /*********************
 AUTHOR NAME

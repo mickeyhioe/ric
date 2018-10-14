@@ -15,7 +15,7 @@
     <i class="fab fa-instagram"></i>
   </a>
 </nav>
-<nav class="nav-menu">
+<nav class="nav-footer-menu">
   <ul class="menu align-center">
     <li><a href="contact.php">Contact Us</a></li>
     <li><a href="#">Privacy Policy</a></li>

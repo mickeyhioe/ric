@@ -5,7 +5,7 @@
           <div class="large-11 cell">
             <div class="grid-container">
 
-              <div class="grid-x align-middle align-center full-height with-top-bar">
+              <div class="grid-x align-top section-padding full-height with-top-bar">
                 <div class="large-12 medium-10 cell">
                   <div class="slide-content">
                     <span class="section-title">ERROR</span>
@@ -14,7 +14,7 @@
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>

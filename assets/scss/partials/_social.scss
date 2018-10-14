@@ -152,18 +152,20 @@ SOCIAL SHARE
       }
     }
     &.dark-bg{
-      h3{
-        color: $white;
-      }
-      .line:before{
-        background: $white;
-      }
-      ul li a{
-        color: $white;
-        &:hover{
-          color: $red;
-          i{
-            color: inherit;
+      @include breakpoint(medium){
+        h3{
+          color: $white;
+        }
+        .line:before{
+          background: $white;
+        }
+        ul li a{
+          color: $white;
+          &:hover{
+            color: $red;
+            i{
+              color: inherit;
+            }
           }
         }
       }

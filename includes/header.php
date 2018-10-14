@@ -73,51 +73,53 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-      <div class="grid-container">
-        <div class="grid-x full-height">
+      <div class="mobile-menu-container">
+        <div class="grid-container">
+          <div class="grid-x full-height">
 
-          <div class="cell">
+            <div class="cell">
 
-            <!-- Search Form -->
-            <div class="grid-x align-center">
-              <div class="medium-6 large-4 cell">            
-                <div class="search-form">
-                  <form action="search.php" role="search" method="get" id="searchform" class="search-form form">
-                    <div class="icon-inside icon-search">
-                      <input placeholder="Search" type="text" class="input rounded">
-                      <button class="arrow"></button>
-                    </div>
-                  </form>
+              <!-- Search Form -->
+              <div class="grid-x align-center">
+                <div class="medium-6 large-4 cell">            
+                  <div class="search-form">
+                    <form action="search.php" role="search" method="get" id="searchform" class="search-form form">
+                      <div class="icon-inside icon-search">
+                        <input placeholder="Search" type="text" class="input rounded">
+                        <button class="arrow"></button>
+                      </div>
+                    </form>
+                  </div>
+                  
                 </div>
-                
               </div>
+              <!-- /Search Form -->
             </div>
-            <!-- /Search Form -->
-          </div>
 
-          <div class="cell align-self-stretch align-middle">
+            <div class="cell align-self-stretch align-middle">
 
-            <!-- Main Menu -->
-            <div class="grid-x align-center">
-              <div class="small-12 cell">
-                <?php include('includes/main-menu.php');?>
+              <!-- Main Menu -->
+              <div class="grid-x align-center">
+                <div class="small-12 cell">
+                  <?php include('includes/main-menu.php');?>
+                </div>
               </div>
+              <!-- /Main Menu -->
+
             </div>
-            <!-- /Main Menu -->
 
-          </div>
+            <div class="cell align-self-bottom">
 
-          <div class="cell align-self-bottom">
-
-            <!-- Main Menu Footer-->
-            <div class="grid-x align-center ">
-              <div class="small-12 cell">
-                <?php include('includes/main-menu-footer.php');?>
+              <!-- Main Menu Footer-->
+              <div class="grid-x align-center ">
+                <div class="small-12 cell">
+                  <?php include('includes/main-menu-footer.php');?>
+                </div>
               </div>
+              <!-- /Main Menu Footer-->
             </div>
-            <!-- /Main Menu Footer-->
-          </div>
 
+          </div>
         </div>
       </div>
     </div>

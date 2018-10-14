@@ -24,10 +24,15 @@ $(document).ready(function() {
         $slide.on('reInit afterChange', function(event, slick, currentSlide, nextSlide){
             var i = (currentSlide ? currentSlide : 0) + 1;
             $slide.find('.paging-info').text('0'+ i + '/' + '0'+ slick.slideCount);
+            
+        });
+
+        $slide.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            startProgressbar();
         });
 
         //Default Param
-        param['slide'] = '.slide-item';
+        param.slide = '.slide-item';
         
         // Build Slick
         $slide.slick(param);
@@ -44,10 +49,7 @@ $(document).ready(function() {
             }
         });
 
-        $('.slick-dots, .slick-arrow').on('click', function() {
-            startProgressbar();
-        });
-    
+   
         function startProgressbar() {
             resetProgressbar();
             percentTime = 0;
@@ -158,9 +160,8 @@ $(document).ready(function() {
             else {
                 $share.removeClass('dark-bg');
             }
-        }
-    
-    })
+        }    
+    });
 
 
 
@@ -217,6 +218,7 @@ $(document).ready(function() {
     // Mobile Menu
 	$('#open-menu').on('click', function(e) {
         e.preventDefault();
+        $('body').toggleClass('open');
         $('#mobile-menu').toggleClass('open');
         $(this).toggleClass('active');
     });
