@@ -14493,6 +14493,9 @@ ol.leading-zero {
 /*********************
 GENERAL STYLES
 *********************/
+body.open {
+  overflow: hidden; }
+
 a {
   color: black;
   -webkit-transition: all 0.3s ease-in-out;
@@ -15085,7 +15088,7 @@ MOBILE MENU
     height: 100%;
     z-index: 9999; }
     .mobile-menu.open .mobile-menu-container {
-      height: 100%; }
+      height: auto; }
     .mobile-menu.open nav.main-menu li {
       -webkit-animation: fadeInRight .5s ease forwards;
       animation: fadeInRight .5s ease forwards;
@@ -15261,14 +15264,17 @@ MOBILE MENU
   @media print, screen and (min-width: 40em) {
     .mobile-menu.open .nav-footer-menu .menu a {
       font-size: .875em;
-      padding: .7rem 1rem; } }
+      padding: .7rem 1rem;
+      font-family: "NeueHaasGroteskText Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; } }
 
 .mobile-menu.open p {
   font-size: .65em;
-  line-height: 1.2; }
+  line-height: 1.2;
+  padding-top: .3rem; }
   @media print, screen and (min-width: 40em) {
     .mobile-menu.open p {
-      font-size: .875em; } }
+      font-size: .875em;
+      padding: .5rem 0; } }
 
 /*********************
 STICKY NAVIGATION

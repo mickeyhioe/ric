@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/js/vendor/slick/slick.css">
     <link rel="stylesheet" href="assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/js/vendor/scrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css?1">
     
   </head>

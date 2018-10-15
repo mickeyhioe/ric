@@ -132,7 +132,7 @@ MOBILE MENU
     height: 100%;
     z-index: 9999;
     .mobile-menu-container{
-      height: 100%;
+      height: auto;
     }
     nav.main-menu{
       li {
@@ -322,13 +322,16 @@ MOBILE MENU
     @include breakpoint(medium){
       font-size: .875em;
       padding: .7rem 1rem;
+      font-family: $primary_bold;
     }
   }
   p{
     font-size: .65em;
     line-height: 1.2;
+    padding-top: .3rem;
     @include breakpoint(medium){
       font-size: .875em;
+      padding: .5rem 0;
     }
   }
 }

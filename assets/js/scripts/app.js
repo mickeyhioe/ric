@@ -163,7 +163,12 @@ $(document).ready(function() {
         }    
     });
 
-
+    // Scrollbar for Mobile Menu
+    
+    $("#mobile-menu").mCustomScrollbar({
+        autoHideScrollbar: true,
+    });
+    
 
     // Hide Header on on scroll down
     /*
@@ -221,6 +226,7 @@ $(document).ready(function() {
         $('body').toggleClass('open');
         $('#mobile-menu').toggleClass('open');
         $(this).toggleClass('active');
+        $("#mobile-menu").mCustomScrollbar("update");
     });
 
     //Parallax
