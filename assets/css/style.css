@@ -15503,6 +15503,9 @@ nav.news-category-menu ul.menu li {
     color: #cc0d1f;
     border-color: #cc0d1f; }
 
+.search-content {
+  margin-bottom: 3em; }
+
 /*********************
 SOCIAL FOLLOW
 *********************/
@@ -16803,3 +16806,30 @@ CONTACT
   background-position: center bottom;
   background-repeat: repeat-x;
   background-color: white; }
+
+/*********************
+ERROR
+*********************/
+.error-404 {
+  background-image: url("../img/graphics/404-error.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px auto;
+  height: 190px;
+  margin-top: 3em; }
+  @media print, screen and (min-width: 40em) {
+    .error-404 {
+      background-size: 800px auto;
+      height: 300px; } }
+  @media print, screen and (min-width: 64em) {
+    .error-404 {
+      margin-top: 0;
+      background-image: none;
+      height: auto; } }
+  .error-404 img {
+    display: none; }
+    @media print, screen and (min-width: 64em) {
+      .error-404 img {
+        display: block;
+        width: 100%;
+        height: auto; } }

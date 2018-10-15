@@ -30,7 +30,7 @@
   <!-- News Small Item -->
   <div class="news-small-item">
     <div class="news-small-item-inner">
-      <a class="img" style="background-image: url(https://picsum.photos/400/400?image=<?php echo $image;?>);"></a>
+      <a href="single.php" class="img" style="background-image: url(https://picsum.photos/400/400?image=<?php echo $image;?>);"></a>
       <div class="news-content">                
         <div class="news-meta">
           <span class="category"><?php echo $cat;?></span>

@@ -1,5 +1,4 @@
     <?php
-      $page_title ="News";
       if (!isset($newsfeed_large)){
         $newsfeed_large = false;
       }
@@ -16,7 +15,7 @@
             <div class="grid-container"> 
               <div class="grid-x align-middle">
                 <div class="large-8 cell">
-                  <span class="section-title"><?php echo $page_title; ?></span>
+                  <span class="section-title">News</span>
                   <h2>THE WORD</h2>
                 </div>
                 <div class="large-4 cell">

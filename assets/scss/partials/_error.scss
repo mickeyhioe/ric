@@ -1,0 +1,28 @@
+/*********************
+ERROR
+*********************/ 
+.error-404{
+    background-image: url('../img/graphics/404-error.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px auto;
+    height: 190px;
+    margin-top: 3em;
+    @include breakpoint(medium){
+        background-size: 800px auto;
+        height: 300px;
+    }
+    @include breakpoint(large){
+        margin-top: 0;
+        background-image: none;
+        height: auto;
+    }
+    img{
+        display: none;
+        @include breakpoint(large){
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
